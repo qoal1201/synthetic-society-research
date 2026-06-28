@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - glossary.qmd
+    - open-questions.qmd
+    - research-log/
+    - paper-reviews/
+    - reproductions/
+
+website:
+  title: "Synthetic Society Research"
+  description: "인간과 AI가 상호작용하는 합성사회를 공부하고 기록하는 공간."
+  navbar:
+    left:
+      - text: "소개"
+        href: index.qmd
+      - text: "일지"
+        href: research-log/index.qmd
+      - text: "논문 리뷰"
+        href: paper-reviews/index.qmd
+      - text: "재현"
+        href: reproductions/index.qmd
+      - text: "용어집"
+        href: glossary.qmd
+      - text: "열린 질문"
+        href: open-questions.qmd
+    right:
+      - icon: github
+        href: https://github.com/qoal1201/synthetic-society-research
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    toc: true
+    code-copy: true

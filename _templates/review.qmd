@@ -1,0 +1,16 @@
+---
+title: "arXivID — 논문 제목"
+date: "YYYY-MM-DD"
+description: "한 줄 요약"
+categories: [review]
+---
+
+> arXiv: <링크> · 저자 / 연도
+
+## 핵심 주장
+
+## 방법
+
+## 한계
+
+## 내 생각 · 열린 질문

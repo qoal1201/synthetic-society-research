@@ -1,0 +1,11 @@
+---
+title: "논문 리뷰"
+listing:
+  contents: "2*.qmd"
+  sort: "date desc"
+  type: table
+  fields: [date, title, description]
+  date-format: "YYYY-MM-DD"
+---
+
+읽은 논문의 핵심 주장·방법·한계와 직접 본 문제점.
