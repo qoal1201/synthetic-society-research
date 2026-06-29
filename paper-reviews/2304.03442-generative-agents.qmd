@@ -6,7 +6,7 @@ categories: [review]
 ---
 
 > arXiv: [2304.03442](https://arxiv.org/abs/2304.03442) · Park, O'Brien, Cai, Morris, Liang, Bernstein / 2023
-> 상태: 🌿 §3·§4 정독(L2) · 마지막 손질 2026-06-29 · 관련: [용어집](../glossary.qmd) · [열린 질문](../open-questions.qmd) · [계보](../reading-list.qmd)
+> 상태: §3·§4 정독(2회독) · 관련: [용어집](../glossary.qmd) · [열린 질문](../open-questions.qmd) · [계보](../reading-list.qmd)
 > 모델: gpt-3.5-turbo (당시 GPT-4 초대제) — 전부 *값싼 단일 모델에 프롬프트만 두른* 구조.
 
 ## 핵심 주장
@@ -29,8 +29,8 @@ categories: [review]
   - recency: 마지막 접근 이후 (게임)시간당 0.995 지수감쇠.
   - importance: LLM에게 1~10 poignancy를 직접 물어 매김. 프롬프트 원문 — *"On the scale of 1 to 10, where 1 is purely mundane (e.g., brushing teeth, making bed) and 10 is extremely poignant (e.g., a break up, college acceptance), rate the likely poignancy of the following piece of memory."*
   - relevance: 기억 문장 임베딩과 질의 임베딩의 코사인 유사도.
-- **reflection**: 최근 사건 importance 합이 150을 넘으면 트리거(하루 2~3회). LLM이 최근 기억에서 중요한 질문을 뽑고, 관련 기억을 근거로 더 높은 차원의 결론을 합성 → 그 결론도 memory object로 다시 저장(관찰→결론→상위결론의 추상화 트리).
-- **planning**: 하루 큰 계획 → 시간 단위 덩어리 → 5~15분 행동으로 재귀 분해. memory에 저장하고, 도중 사건이 생기면 중간에 다시 짬.
+- **reflection**: 최근 사건 importance 합이 150을 넘으면 트리거(하루 2~3회). 3단계 — ⓐ최근 기억 100개를 주고 LLM이 핵심 질문 3개를 *직접* 뽑고, ⓑ각 질문을 검색 질의로 근거 기억을 모아, ⓒ결론을 합성하되 근거 번호를 인용하게 강제(실재 기억에 묶어 환각 억제 + 그 인용이 곧 트리의 가지). 결론도 관찰과 같은 자격의 memory object로 다시 저장(관찰→결론→상위결론의 bottom-up 추상화 트리).
+- **planning**: 하루 큰 계획 → 시간 덩어리 → 5~15분 행동으로 재귀 분해(top-down). 단계 분해의 이유 둘 — 거대한 한 방 생성은 품질이 무너짐 + 상위 계획이 하위의 *닻*이 되어 일관성을 강제. 계획은 매 순간 행동 프롬프트에 주입돼 모순(점심 두 번)을 막음. react는 매 관찰을 무조건 replan하지 않고 LLM이 "반응할까?"를 먼저 판단 → 반응 시에만 그 시점부터 재생성. (무조건 replan이면 계획이 한 tick도 못 버텨 일관성 붕괴 → 지킬 힘과 깰 힘 사이의 밸브.) reflection과 planning은 같은 계층 구조를 과거/미래로 양방향 사용.
 - 매 순간 retrieval 상위 몇 개를 LLM 프롬프트에 넣어 행동·대화 생성.
 
 ::: {.callout-note title="🧑 선호"}
@@ -41,16 +41,34 @@ reflection이 importance 합 150을 넘으면 터진다는데, 150은 어디서 
 맞아 — 튜닝된 휴리스틱이고 논문도 고정 상수로 밝힌다. 정작 이 값에 대한 민감도 분석(ablation)은 안 했어. 그래서 "임의 상수가 창발에 얼마나 영향을 주나"는 우리가 [열린 질문 Q2](../open-questions.qmd)로 들고 가는 빈틈. 재현 때 150을 바꿔보면 직접 만질 수 있다.
 :::
 
+::: {.callout-note title="🧑 선호"}
+reflection 결론은 일기장에 캐시 형태로 저장하는 거야?
+:::
+
+::: {.callout-tip title="🤖 Claude"}
+캐시가 아냐. 캐시는 같은 계산을 다시 하기 싫어 들고 있는 임시 사본이라 원본이 바뀌면 버려(이 논문에선 정체성 한 문단인 agent summary가 그쪽 — 주기적으로 다시 계산해 덮어씀). reflection 결론은 관찰과 *똑같은 자격*의 새 기억으로 영구히 stream에 쌓여. 덮어쓰지 않고 누적되고, 다음 reflection의 근거로 다시 검색돼. 그래서 캐시가 아니라 추상화 트리의 새 노드.
+:::
+
 ## 평가
 
 - **개인 believability**: 5영역(자기인식/기억/계획/반응/reflection) 인터뷰 → 사람 평가자 채점, TrueSkill 랭킹. ablation 결과: Full 29.89 > −reflection 26.88 > −reflection·planning 25.64 > −memory 21.21. **기여 크기가 다름** — 기억(관찰) 제거가 최대 타격(−4.43), planning 최소(−1.24), reflection 중간(−3.01). **사람 크라우드워커(22.95)는 '천장'이 아니라** 제거된 AI 두 조건보다도 낮음 — 저자도 "최대 인간 성능을 대표 못 함"이라 인정. Full 대비 바닥 효과크기 d≈8.16.
 - **창발(사회적 행동)**: 2일 시뮬에서 정보 확산(소문을 끝에 아는 에이전트 수), 관계 네트워크 밀도, 협응(파티 실제 참석)을 측정.
 
+::: {.callout-note title="🧑 선호"}
+planning이 ablation에서 꼴찌(−1.24)면, ablation이라는 채점 방식이 planning을 증명하기엔 안 맞는 거 아냐?
+:::
+
+::: {.callout-tip title="🤖 Claude"}
+한 칸만 더 정밀하게 하자. ablation 절차 자체는 멀쩡해 — 범인은 거기 *물린 지표*(단발 인터뷰 believability)가 planning이 하는 일(하루치 일관성)을 볼 눈이 없다는 거야. 같은 ablation을 협응 같은 다른 자에 물렸으면 planning이 1등으로 나왔을 것. 그래서 "점수가 낮다"는 언제나 "*어떤* 지표에서 낮다"의 줄임말이고, 부품을 빼는 행위와 뺀 결과를 재는 자는 별개다.
+:::
+
 ## 한계 · 비판
 
 - **believable ≠ true**: 측정값은 "사람이 그럴듯하다고 본 정도"지 "실제 인간과 일치하는 정도"가 아니다. 닫힌 시뮬이라 정답(ground truth)이 없어 정확도 자체를 못 잰다.
 - **창발 증거는 데모에 가깝다**: 단일 run, 작은 규모(25명·마을 1개·2일), 반복·오차범위 없음. 생생한 파티 일화 = 일화(체리픽 여지). 집계 숫자(확산·밀도·협응)가 더 단단. 두 층의 증거 무게가 다름 — "통계적으로 입증"보다 "그럴듯하게 시연".
-- **importance를 LLM이 매김** = 룰을 LLM에 위임. "LLM을 평가자로" 패턴이 반복되며 재현성에 confound 가능.
+- **importance를 LLM이 매김** = 룰을 LLM에 위임. "LLM을 평가자로" 패턴이 반복되며 재현성에 confound 가능. reflection은 ⓐ질문 뽑기·ⓒ결론 합성·importance 점수까지 LLM에 겹겹이 의존 — 이 confound가 가장 진하게 나타나는 부품.
+- **ablation이 누적식이라 상호작용을 못 가른다**: reflection이 켜진 조건엔 planning도 항상 켜져 있어, *planning 없이 reflection이 단독으로* 기여하는지는 이 표로 알 수 없다. factorial(2³ 조합)이 아니라 위에서 하나씩 끄는 한 경로만 봄.
+- **planning은 지표가 과소평가**: ablation에서 planning 몫은 −1.24로 최소지만, believability를 *단발 인터뷰*로 재서 "하루치 일관성"을 못 묻는다. 같은 부품이 협응(파티) 결과에선 필수 주연. 자(지표)를 바꾸면 중요도가 뒤집힘 → "점수 낮음 = 덜 중요"는 위험한 추론.
 
 ## 내 생각 · 열린 질문
 
