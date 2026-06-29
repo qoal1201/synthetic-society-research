@@ -1,5 +1,5 @@
 ---
-title: "Day N — 주제"
+title: "그날 주제 (Day N 안 씀 — 순서는 날짜가 함)"
 date: "YYYY-MM-DD"
 description: "한 줄 요약"
 categories: [journal]

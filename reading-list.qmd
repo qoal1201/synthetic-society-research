@@ -1,0 +1,71 @@
+---
+title: "계보 · 읽을거리 (2023 → 2026)"
+description: "Generative Agents 이후 분야 지형 + 검증된 논문 목록 + 내 질문과의 매핑."
+---
+
+> 상태: 🌱 1차 웹 스캔(2026-06-29) · 대부분 미정독 · 마지막 손질 2026-06-29
+
+Generative Agents([2304.03442](paper-reviews/2304.03442-generative-agents.qmd)) 이후 분야가 어떻게 갈라졌나. arXiv ID는 대부분 확인됨. 2026년 일부 ID는 *미확인*으로 표시 — 인용 전 확인.
+
+## 뿌리
+
+- **Generative Agents** (Park et al. 2023, `2304.03442`) — memory stream → retrieval → reflection → planning. 25명 Smallville. 아래 전부가 이걸 확장·확대·반박한다.
+
+## 가지 A — 규모 (이미 정복됨)
+
+- OASIS (`2411.11581`) — 소셜미디어 100만 에이전트. 이벤트 기반 + vLLM 배치추론.
+- AgentSociety (`2502.08691`) — 도시 1만+ 에이전트, 500만 상호작용.
+- SocioVerse (`2504.10157`) — 실제 1,000만 유저 풀 기반 world model.
+- Project Sid (`2411.00114`, Altera) — Minecraft 1000+, PIANO(실시간 동시성).
+- GenSim (`2410.04360`) — 10만, 장기 안정성(에러정정).
+- S³ (`2307.14984`) — 초기 소셜넷 시뮬.
+
+## 가지 B — 실제 사람 충실 복제
+
+- **Park 2024** (`2411.10109`, 현재 제목 "LLM Agents Grounded in Self-Reports…") — 실제 1,052명 인터뷰 → 개인별 복제. 설문 자기재현의 ~85%. 내 직속 후속.
+- 뿌리: silicon samples (`2209.06899`), Turing Experiments (`2208.10264`), Homo Silicus (`2301.07543`).
+
+## 가지 C — 비판 · 검증 (← 내 자리와 가까움)
+
+- Santurkar "Whose Opinions Do LMs Reflect?" (`2303.17548`) — 어떤 집단과도 어긋나고 steering해도 안 고쳐짐(WEIRD 편향).
+- CoMPosT (`2310.11501`) — 페르소나가 캐리커처로 과장됨.
+- Wang et al. (`2402.01908`, Nature MI) — 정체성 집단을 flatten·오도.
+- 균질화: 시장 트레이더 재현 실패 (`2502.15800`), 시뮬에 경계 필요 (`2506.19806`).
+- Hullman et al. (`2602.15785`, 2026 — ID 미확인) — 순수 시뮬은 탐색용만, 확증엔 실데이터 anchor + 통계 보정.
+- **핵심 발견:** 집계 *평균*은 맞춰도 *개인·분포(다양성)*는 못 맞춘다. 너무 합리적·균질.
+
+## 가지 D — 기억 · 효율 (활발, 도구로 가져다 쓸 것)
+
+- 효율 프레임: Affordable Generative Agents (`2402.02053`, 정책 재사용 캐싱) · Lyfe Agents (`2310.02172`, 10~100배↓, summarize-and-forget) · archetypes (`2409.10568`, 행동 원형당 1회 호출 → 840만) · EcoLANG (`2505.06904`, 토큰↓).
+- 서빙/인프라: Autellix (`2502.13965`, 4~15배) · AgentScope 대규모 (`2407.17789`) · KVFlow (`2507.07400`) · CacheBlend (`2405.16444`) · LLMLingua (`2310.05736`).
+- 하이브리드: LLM + Diffusion (`2510.16366`) — 소수만 LLM, 나머지는 싼 모델.
+- 디스틸레이션: 작은 모델로 에이전트 행동 이식 (`2505.17612`, `2505.13820`).
+- 프레임워크(맥락): Concordia (`2312.03664`, DeepMind, Game Master) · GPTSwarm (`2402.16823`) · AutoGen (`2308.08155`) · CAMEL (`2303.17760`) · MetaGPT (`2308.00352`) · ChatDev (`2307.07924`).
+- **기억 구조는 2023(recency+importance+relevance)을 한참 넘어섰다:** OS식 페이징 MemGPT(`2310.08560`) · 자가진화 노트 A-MEM(`2502.12110`) · 프로덕션 Mem0(`2504.19413`, 토큰 90%↓) · 그래프 멀티홉 HippoRAG(`2405.14831`) · 시간유효성 bi-temporal Zep(`2501.13956`) · 진짜 망각(Ebbinghaus) MemoryBank(`2305.10250`) · 에피소드 분할 EM-LLM(`2407.09450`) · reflection 계열 Reflexion(`2303.11366`)·ExpeL(`2308.10144`). → Q4(3요소 최적?)·Q5(잊기) 읽을거리. **핵심: 평평한 stream은 이미 graph·writable·forgetting으로 대체됨.**
+
+## scaffolding vs 강한 기초모델 (Q3 직결)
+
+- "LESS" 쪽: Lita의 **Agent Complexity Law**(`2509.25873`) — 모델이 좋아질수록 복잡한 비계의 이점이 0으로 수렴(단, 코딩/QA 도메인). LCLM로 단순화(`2505.08120`), 강한 RAG 베이스라인(`2506.03989`).
+- "MORE" 쪽: planning은 못 대체(`2507.23589`), CoALA(`2309.02427`)는 구조 옹호.
+- ⭐ **결정적 빈틈:** generative-agents의 memory·reflection·planning *ablation을 더 강한 모델로 재실행*한 검증 논문이 (확인된 범위 내) **없음.** = 정확히 내 Q3 = 방어 가능한 빈칸.
+
+## 내 질문(Q1~Q6)과의 매핑
+
+| 질문 | 분야 상태 |
+|---|---|
+| Q1 검색 vs 압축 · Q5 잊기 | 기억 가지가 활발히 다룸 (consolidation·forgetting). 읽을 거 있음. |
+| Q6 비용 최소화 | 가지 D가 거의 다 함. 새 영역 아님 → 도구로 씀. |
+| Q3 현대 모델이면 비계 의미? | 부분만. "현대 모델로 ablation 정면 재검증"은 안 보임 → 빈틈. |
+| Q2 임계값 150 · Q4 3요소 최적 | 직접 답한 논문 못 찾음 → 빈틈(작음). |
+
+## 후보 방향 (락 아님 — Phase 0)
+
+가지 A·B·C·D 전부 **닫힌 시뮬레이터 + ground truth(예측 정확도)** 전제다. 진짜 사람 + AI가 공존하는 *열린 세계*엔 ground truth가 없어 그 검증틀이 통째로 안 통한다. → **열린 세계의 believability·창발을 *어떻게 측정*하나** = 성숙한 방법론 부재 = 새 기여가 가장 방어 가능한 지점. (여러 스캔이 독립적으로 같은 결론. CLAUDE.md 메타 관찰과 일치.)
+
+두 빈칸이 합쳐질 수 있음 (thesis seed): **① 강한 현대 모델로 비계(memory·reflection) ablation 재검증(Q3) × ② 그걸 ground truth 없는 열린 세계(클로니)에서 *어떻게 측정*할지 정립.** = 남이 안 한 실험 + 남이 못 가진 자산(라이브 사람+AI). 락 아님 — 후속 정독으로 검증 후 결정.
+
+## 불확실 플래그
+
+- 2026년 arXiv ID(`2602.*`, `2603.*`) 다수 미확인 — 인용 전 직접 확인.
+- Park 2024는 제목이 바뀜(같은 ID `2411.10109`).
+- 대규모 논문들의 정확한 비용·수치는 본문 PDF 확인 필요(초록엔 없음).
