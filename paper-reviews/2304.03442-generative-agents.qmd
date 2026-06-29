@@ -1,0 +1,48 @@
+---
+title: "2304.03442 — Generative Agents: Interactive Simulacra of Human Behavior"
+date: "2026-06-29"
+description: "기억 없는 LLM 바깥에 두른 memory stream·검색·reflection·planning 구조. Day 1 — 전체 1회독(의도·메커니즘·평가·한계)."
+categories: [review]
+---
+
+> arXiv: [2304.03442](https://arxiv.org/abs/2304.03442) · Park, O'Brien, Cai, Morris, Liang, Bernstein / 2023
+
+## 핵심 주장
+
+- LLM 한 번의 호출은 유능하지만 호출 사이에 기억이 없다(context window 한계). 이 한계를 모델 *바깥의* 아키텍처로 메우면, 시키지 않은 사회적 행동(소문 전파, 모임 형성)이 창발한다.
+- 발명품은 LLM 자체가 아니라 그 주위에 두른 구조다: memory stream → 검색(recency·importance·relevance) → reflection → planning.
+
+## 방법
+
+- **memory stream**: 모든 관찰을 `[자연어 문장 + 생성시각 + 마지막 접근시각]`인 memory object로 시간순 누적.
+- **retrieval score** = recency + importance + relevance. 가중치 α 셋 다 1, 각 항목 min-max로 [0,1] 정규화 후 합산.
+  - recency: 마지막 접근 이후 (게임)시간당 0.995 지수감쇠.
+  - importance: LLM에게 1~10 poignancy를 직접 물어 매김. 프롬프트 원문 — *"On the scale of 1 to 10, where 1 is purely mundane (e.g., brushing teeth, making bed) and 10 is extremely poignant (e.g., a break up, college acceptance), rate the likely poignancy of the following piece of memory."*
+  - relevance: 기억 문장 임베딩과 질의 임베딩의 코사인 유사도.
+- **reflection**: 최근 사건 importance 합이 150을 넘으면 트리거(하루 2~3회). LLM이 최근 기억에서 중요한 질문을 뽑고, 관련 기억을 근거로 더 높은 차원의 결론을 합성 → 그 결론도 memory object로 다시 저장(관찰→결론→상위결론의 추상화 트리).
+- **planning**: 하루 큰 계획 → 시간 단위 덩어리 → 5~15분 행동으로 재귀 분해. memory에 저장하고, 도중 사건이 생기면 중간에 다시 짬.
+- 매 순간 retrieval 상위 몇 개를 LLM 프롬프트에 넣어 행동·대화 생성.
+
+## 평가
+
+- **개인 believability**: 5영역(자기인식/기억/계획/반응/reflection) 인터뷰 → 사람 평가자가 답을 채점. ablation(full / −reflection / −reflection·planning / −memory)과 사람 크라우드워커 baseline을 비교. TrueSkill로 랭킹화. Full이 AI 버전 중 최고(μ≈29.89), 바닥 대비 효과크기 d≈8.16, 부품을 뺄수록 점수 하락 → 각 부품이 기여.
+- **창발(사회적 행동)**: 2일 시뮬에서 정보 확산(소문을 끝에 아는 에이전트 수), 관계 네트워크 밀도, 협응(파티 실제 참석)을 측정.
+
+## 한계 · 비판
+
+- **believable ≠ true**: 측정값은 "사람이 그럴듯하다고 본 정도"지 "실제 인간과 일치하는 정도"가 아니다. 닫힌 시뮬이라 정답(ground truth)이 없어 정확도 자체를 못 잰다.
+- **창발 증거는 데모에 가깝다**: 단일 run, 작은 규모(25명·마을 1개·2일), 반복·오차범위 없음. 생생한 파티 일화 = 일화(체리픽 여지). 집계 숫자(확산·밀도·협응)가 더 단단. 두 층의 증거 무게가 다름 — "통계적으로 입증"보다 "그럴듯하게 시연".
+- **importance를 LLM이 매김** = 룰을 LLM에 위임. "LLM을 평가자로" 패턴이 반복되며 재현성에 confound 가능.
+
+## 내 생각 · 열린 질문 (박선호 — 초안, 검수 전)
+
+- 왜 "다 보관 후 검색"인가? 압축은 지금 뭘 버릴지 조기결정(비가역), 검색은 다 갖고 필요할 때 고르는 지연결정. 장기 인격엔 후자. 단 논문도 reflection·프롬프트 주입엔 요약 병행 → 상보적. (→ `open-questions.qmd` Q1)
+- 닫힌 시뮬의 believable≠true 간극 = 진짜 사람이 섞인 *열린 세계* 연구의 씨앗. 메커니즘은 이식하되 평가틀(정확도)은 그대로 못 옮긴다.
+
+## 읽기 트래커 (1회독 완료)
+
+- [x] memory stream
+- [x] retrieval (recency / importance / relevance)
+- [x] reflection
+- [x] planning
+- [x] evaluation (ablation, believability, 창발 측정)
