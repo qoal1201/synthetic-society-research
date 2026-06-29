@@ -6,6 +6,7 @@ categories: [review]
 ---
 
 > arXiv: [2304.03442](https://arxiv.org/abs/2304.03442) · Park, O'Brien, Cai, Morris, Liang, Bernstein / 2023
+> 상태: 🌱 1회독 · 확신도 낮음 · 마지막 손질 2026-06-29 · 관련: [용어집](../glossary.qmd) · [열린 질문](../open-questions.qmd)
 
 ## 핵심 주장
 
@@ -22,6 +23,14 @@ categories: [review]
 - **reflection**: 최근 사건 importance 합이 150을 넘으면 트리거(하루 2~3회). LLM이 최근 기억에서 중요한 질문을 뽑고, 관련 기억을 근거로 더 높은 차원의 결론을 합성 → 그 결론도 memory object로 다시 저장(관찰→결론→상위결론의 추상화 트리).
 - **planning**: 하루 큰 계획 → 시간 단위 덩어리 → 5~15분 행동으로 재귀 분해. memory에 저장하고, 도중 사건이 생기면 중간에 다시 짬.
 - 매 순간 retrieval 상위 몇 개를 LLM 프롬프트에 넣어 행동·대화 생성.
+
+::: {.callout-note title="🧑 선호"}
+reflection이 importance 합 150을 넘으면 터진다는데, 150은 어디서 나온 값이야? 임의로 정한 거면 결과가 거기 휘둘리는 거 아냐?
+:::
+
+::: {.callout-tip title="🤖 Claude"}
+맞아 — 튜닝된 휴리스틱이고 논문도 고정 상수로 밝힌다. 정작 이 값에 대한 민감도 분석(ablation)은 안 했어. 그래서 "임의 상수가 창발에 얼마나 영향을 주나"는 우리가 [열린 질문 Q2](../open-questions.qmd)로 들고 가는 빈틈. 재현 때 150을 바꿔보면 직접 만질 수 있다.
+:::
 
 ## 평가
 

@@ -7,8 +7,15 @@ title: "Synthetic Society Research"
 
 ## 구성
 
-- [연구 일지](research-log/index.qmd) — 날짜별 기록
-- [논문 리뷰](paper-reviews/index.qmd) — 읽은 논문 정리와 비판
+날짜순으로 쌓이는 기록과, 계속 손보며 자라는 문서로 나뉜다.
+
+**기록 (날짜순, 고정)**
+
+- [연구 일지](research-log/index.qmd) — 그날의 공부·사고·실패
+
+**문서 (계속 자람)** — 상단 성숙도 표시: 🌱 초안 · 🌿 다듬는 중 · 🌳 검증 완료
+
+- [논문 리뷰](paper-reviews/index.qmd) — 읽은 논문의 주장·방법·한계와 비판
 - [재현](reproductions/index.qmd) — 결과를 작게 다시 구현
 - [용어집](glossary.qmd) — 공부하며 정리한 개념
 - [열린 질문](open-questions.qmd) — 떠오른 질문 모음
