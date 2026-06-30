@@ -1,20 +1,23 @@
 ---
 title: "Synthetic Society Research"
+listing:
+  id: journal
+  contents: "research-log/2*.qmd"
+  sort: "date desc"
+  type: default
+  fields: [date, title]
+  date-format: "YYYY-MM-DD"
 ---
 
-인간과 AI가 상호작용하는 합성사회(synthetic society)를 공부하고 기록하는 공간.
+인간 ↔ AI가 상호작용하는 *합성사회*를 공부하고 기록한다.
 
-## 구성
+> 지금 · 계보 논문 정독 중 · 추적 중인 열린 질문 9개
 
-날짜순으로 쌓이는 기록과, 계속 손보며 자라는 문서로 나뉜다.
+## 일지
 
-**기록 (날짜순, 고정)**
+::: {#journal}
+:::
 
-- [연구 일지](research-log/index.qmd) — 그날의 공부·사고·실패
+---
 
-**문서 (계속 자람)** — 상단 성숙도 표시: 🌱 초안 · 🌿 다듬는 중 · 🌳 검증 완료
-
-- [논문 리뷰](paper-reviews/index.qmd) — 읽은 논문의 주장·방법·한계와 비판
-- [재현](reproductions/index.qmd) — 결과를 작게 다시 구현
-- [용어집](glossary.qmd) — 공부하며 정리한 개념
-- [열린 질문](open-questions.qmd) — 떠오른 질문 모음
+필요하면 들어가는 곳 — [논문 리뷰](paper-reviews/index.qmd) · [용어집](glossary.qmd) · [열린 질문](open-questions.qmd)

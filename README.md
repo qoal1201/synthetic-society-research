@@ -1,7 +1,6 @@
 # Synthetic Society Research
 
 인간과 AI가 상호작용하는 합성사회(synthetic society)를 공부하고 기록하는 저장소.
-관련 연구를 읽고, 비판하고, 작게 재현한다.
 
 읽기 좋은 버전(사이트): https://qoal1201.github.io/synthetic-society-research/
 
@@ -9,11 +8,13 @@
 
 | 폴더 / 파일 | 내용 |
 |---|---|
-| `research-log/` | 날짜별 공부 일지 |
+| `research-log/` | 공부 일지 — 작업 호 단위(안에 날짜별 체크포인트) |
 | `paper-reviews/` | 논문 리뷰 — 핵심 주장·방법·한계·문제점 |
-| `reproductions/` | 논문 결과 재현 — 코드 + 원논문 대조 |
-| `glossary.qmd` | 개념 정리 |
+| `clonie-comparison.qmd` | 클로니 ↔ 계보 설계 대조 |
+| `glossary.qmd` | 개념 정리 (출처별 색인) |
 | `open-questions.qmd` | 열린 질문 |
+| `reading-list.qmd` | 계보·읽을거리 |
+| `reproductions/` | 논문 결과 재현 — 코드 + 원논문 대조 (준비 중) |
 
 글은 Quarto로 작성하고 GitHub Pages로 배포한다. 재현 코드는 각 `reproductions/<주제>/` 폴더에 실행법과 함께 둔다.
 
