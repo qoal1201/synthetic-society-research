@@ -1,0 +1,156 @@
+---
+title: "분야 지도 — LLM 에이전트로 인간을 시뮬레이션하기"
+description: "714→649편 코퍼스의 계보·측정축 지도 (Claude Science 실데이터 검증, 2026-07-03)"
+---
+
+::: {.callout-important title="reading-list의 '확인된 빈칸' 주장 업데이트"}
+[읽을거리](reading-list.qmd)·[질문 Q7·Q8](open-questions.qmd)에서 *"정답 없는 열린 세계 측정법은 확인된 빈칸"*이라 적었는데, 714편(중복 제거 649편) 코퍼스의 검증·충실도 지역 170편을 한 편씩 실증 분류한 결과 **문자 그대로 비어있지는 않다** — 그 칸을 차지한 논문이 약 8편 있다(모두 20인용 미만·미정립). 즉 정확한 표현은 *"확인된 빈칸"이 아니라 "정립된 표준의 부재"*다. 자세한 판정은 아래 §4.
+:::
+
+> **무엇인가.** Park 2023/2024를 앵커로 실제 학술 DB(OpenAlex)에서 수집·검증한 649편 코퍼스를, 키워드 클러스터가 아니라 **여섯 지역의 계보 + 하나의 측정축**으로 다시 그린 지도. 각 지역의 랜드마크 논문은 실제 인용수·연도·전문으로 확인함. 목적: clonie 개발을 위한 분야 토대와, '다음에 무엇을 깊게 읽을지'의 판단 근거.
+
+> **핵심 결론 한 줄.** 이 분야의 무게중심은 여전히 **오픈월드 생성 에이전트(C, 224편)**와 **집단 시뮬레이션(D, 99편)**에 있고, 당신이 선 **개인 충실도(B, 38편)**는 가장 작다. 그리고 당신의 핵심 가설 — *'열린 세계에서 정답 없이 개인 believability를 재는 방법론이 비어 있다'* — 는 **부분적으로만 맞다**: 그 칸은 문자 그대로 비어있지 않지만(약 8편), **정립된·널리 채택된 표준은 없다**. 아래 §4에서 판정.
+
+## 1. 지형 구성 (649편)
+
+| 지역 | 편수 | 비중 | 중앙 인용 | 성격 |
+|---|---|---|---|---|
+| **생성 에이전트 (오픈월드)** | 224 | 35% | 2 | 오픈월드 믿음직한 에이전트 — 분야의 뿌리이자 최대 |
+| **대규모 사회 시뮬레이션** | 99 | 15% | 4 | 수백~수백만 에이전트 사회 시뮬레이션 플랫폼 |
+| **비판·검증 방법론** | 107 | 16% | 5 | 인간 재현 여부·평가 타당성을 따지는 비판/방법론 |
+| **실리콘 샘플링 (집단)** | 70 | 11% | 2 | LLM으로 설문·여론 집단 분포를 대리 |
+| **기억·엔진** | 61 | 9% | 5 | 기억·반성·검색 등 엔진 구성요소 |
+| **개인 충실도** | 38 | 6% | 1.5 | 특정 개인의 성격·기억을 충실히 재현 — 당신의 위치 |
+| _기타/미분류_ | 50 | 8% | — | 분류 경계 밖 |
+
+*(합계 649편(중복 제거). 지역 분류는 제목·초록 기반 LLM 분류 + 인용 신호 보정.)*
+
+![분야 지형 — 시간 추이(좌)와 개인 충실도 측정 방법 분포(우)](images/field-map-terrain.png)
+
+## 2. 지역별 랜드마크 (실데이터 검증)
+
+모든 인용수·연도는 OpenAlex 실레코드 대조. arXiv ID 49개는 별도로 live arXiv와 대조해 전부 정확 확인(부록).
+
+| 지역 | 논문 | 연도 | 인용 | arXiv |
+|---|---|---|---|---|
+| **생성 에이전트 (오픈월드)** | Park 2023: Generative Agents (Smallville) | 2023 | 1470 | `2304.03442` |
+|  | Concordia | 2023 | 12 | `2312.03664` |
+|  | Lyfe Agents | 2023 | 1 | `2310.02172` |
+|  | Affordable Generative Agents | 2024 | 0 | `2402.02053` |
+| **대규모 사회 시뮬레이션** | OASIS (1M) | 2024 | 128 | `2411.11581` |
+|  | AgentSociety | 2025 | 13 | `2502.08691` |
+|  | Project Sid | 2024 | 10 | `2411.00114` |
+|  | S3 | 2023 | 7 | `2307.14984` |
+|  | GenSim | 2024 | 3 | `2410.04360` |
+|  | LLM archetypes (limits of agency) | 2024 | 3 | `2409.10568` |
+|  | SocioVerse | 2025 | 0 | `2504.10157` |
+| **비판·검증 방법론** | Santurkar: Whose Opinions | 2023 | 98 | `2303.17548` |
+|  | CoMPosT: caricature | 2023 | 36 | `2310.11501` |
+|  | Wang: LLMs harmfully flatten (Nature MI) | 2024 | 20 | `2402.01908` |
+|  | LLM traders don't replicate | 2025 | 0 | `2502.15800` |
+|  | Simulations require a boundary | 2025 | 0 | `2506.19806` |
+|  | Hullman: validating LLM sims | 2026 | 0 | `2602.15785` |
+| **실리콘 샘플링 (집단)** | Aher: Turing Experiments | 2022 | 124 | `2208.10264` |
+|  | Argyle: Out of One, Many | 2022 | 92 | `2209.06899` |
+|  | Horton: Homo Silicus | 2023 | 47 | `2301.07543` |
+| **기억·엔진** | Reflexion | 2023 | 271 | `2303.11366` |
+|  | MemoryBank | 2023 | 136 | `2305.10250` |
+|  | CoALA | 2023 | 60 | `2309.02427` |
+|  | MemGPT | 2023 | 45 | `2310.08560` |
+|  | HippoRAG | 2024 | 30 | `2405.14831` |
+|  | Mem0 | 2025 | 25 | `2504.19413` |
+|  | A-MEM | 2025 | 8 | `2502.12110` |
+| **개인 충실도** | Park 2024: Self-report agents | 2024 | 37 | `2411.10109` |
+
+## 3. 지역 카드
+
+### 생성 에이전트 (오픈월드)  
+*224편 · 중앙 인용 2 · 연도별 2023:13 2024:58 2025:101 2026:52(부분)*
+
+이 영역은 LLM 에이전트가 자원(기억, 반성, 계획)을 갖추었을 때 오픈월드 환경에서 인간처럼 그럴듯한 사회적 행동을 자율적으로 생성할 수 있는가를 묻는다. Joon Sung Park의 Generative Agents가 기억·회고·계획 아키텍처로 믿음직한 행동 시뮬라크라를 만들 수 있음을 보이며 사실상 표준 틀로 정립되었고, Lei Wang의 서베이가 자율 에이전트 구성요소(프로파일, 메모리, 계획, 액션)를 정리하며 분류 체계를 굳혔다. 반면 Zhenhailong Wang의 협업적 인지 시너지나 Talebirad, Cheng의 다중 에이전트 협업 연구가 보여주듯, 여러 에이전트·역할이 상호작용할 때 개별 개체의 일관성과 충실도를 어떻게 분리해 평가할지는 열려 있다. 이는 clonie처럼 한 인간을 자유형으로 시뮬레이션할 때, 집단적 believability가 아니라 특정 개인의 성격·기억 일관성을 정량적으로 측정하는 벤치마크 부재 문제와 직결된다.
+
+### 대규모 사회 시뮬레이션  
+*99편 · 중앙 인용 4 · 연도별 2023:22 2024:31 2025:32 2026:14(부분)*
+
+이 영역은 다수의 LLM 에이전트를 사회·경제 규모로 묶었을 때 개별 설계 선택이 집단 동학과 시뮬레이션 신뢰도로 어떻게 확장되는지를 묻는다. Zhiheng Xi의 서베이들과 Xinyi Li, Taicheng Guo의 멀티에이전트 서베이는 아키텍처·워크플로·인프라 분류 체계를 정리해 정립된 기반을 이루며, CAMEL과 Chen Gao의 S3, 에이전트 기반 모델링 서베이는 사회 시뮬레이션·통신 프로토콜의 구체 사례를 제공한다. 반면 Yikang Lu가 지적하듯 복잡계 연구로서의 타당성 검증, 즉 개별 에이전트 행동이 실제 인간 집단 패턴을 재현하는지는 열려 있다. 이는 clonie처럼 자유형 상호작용에서 '한 개인'의 믿음직함을 측정하려면, 다수-에이전트 규모의 집단적 타당성 검증 방법론을 개인 단위 충실도 평가로 역전시켜 적용할 필요가 있음을 시사한다.
+
+### 비판·검증 방법론  
+*107편 · 중앙 인용 5 · 연도별 2023:15 2024:37 2025:38 2026:17(부분)*
+
+이 영역은 LLM 기반 에이전트·시뮬레이션이 인간 행동을 얼마나 신뢰성 있게 재현하며, 그 평가 방법 자체가 타당한가라는 질문을 다룬다. 정립된 부분은 페르소나 부여만으로는 응답 품질이나 대표성이 개선되지 않는다는 것(Zheng, Salminen)과, 사회적 정체성·집단 편향이 생성 모델에 체계적으로 나타난다는 것(Hu), 토론 시뮬레이션에서도 편향이 재현된다는 것(Taubenfeld)이다. 반면 열려 있는 것은 다중 에이전트 평가자(ChatEval) 같은 방법론의 신뢰도, 인과추론 관점에서 시뮬레이션 결과를 실제 인간 행동의 대리로 쓸 수 있는 조건(Gui), 그리고 에이전트 기반 모델 검증 절차의 표준화(Collins)이다. 여기에 InjecAgent가 보여주듯 도구 통합 에이전트의 안전성 취약점도 검증 대상이다. 이는 clonie처럼 개별성을 지닌 시뮬레이션이 자유형 상호작용에서 특정 인물다움(believability)과 충실도를 어떻게 측정·검증할지의 핵심 방법론적 기반이 된다.
+
+### 실리콘 샘플링 (집단)  
+*70편 · 중앙 인용 2 · 연도별 2023:5 2024:18 2025:24 2026:23(부분)*
+
+실리콘 샘플링 연구는 LLM이 개별 인간이 아닌 인구 집단의 응답 분포를 얼마나 정확히 대리할 수 있는가를 묻는다. Sarstedt는 소비자·마케팅 조사에서, Qu는 여론조사 시뮬레이션에서 LLM이 그럴듯한 응답을 생성하지만 체계적 편향을 동반함을 보였고, Boelaert 역시 생성형 모델의 오피니언 폴 응답에서 기계적 편향을 확인해 편향의 존재 자체는 어느 정도 정립되었다. 반면 Hu의 페르소나 효과 정량화나 Shrestha의 WEIRD 표본 대체 가능성 논의가 보여주듯, 어떤 조건에서 어느 정도까지 대체가 유효한지는 열려 있다. 이는 clonie처럼 자유형 상호작용에서 한 개인의 믿음직함을 측정하려는 문제와 직결된다—Yoon의 대화형 추천 시뮬레이터 평가나 Choi의 오디언스 페르소나 연구처럼, 집단 통계적 정합성과 개별 정체성의 충실도는 다른 층위의 문제이기 때문이다.
+
+### 기억·엔진  
+*61편 · 중앙 인용 5 · 연도별 2023:6 2024:19 2025:20 2026:16(부분)*
+
+이 영역은 LLM 에이전트가 장기간 상호작용에서 일관된 정체성과 경험을 어떻게 저장·검색·갱신해야 하는가라는 질문을 다룬다. Zeyu Zhang의 메모리 메커니즘 서베이와 Kostas Hatalis의 장기 기억 필요성 논의는 구조적 분류가 어느 정도 정립되었음을 보여주지만, Hatalis 스스로 지적하듯 실제 장기 일관성 확보는 여전히 열린 문제다. Nicolò Cogno와 Dehkordi의 에이전트 기반 모델링 연구, John Chen의 교육용 ABM 사례는 시뮬레이션 엔진 자체의 성숙도를 보여주는 반면, Yuanchun Li의 퍼스널 에이전트 서베이는 개인화·효율·보안 간 트레이드오프가 미해결임을 지적한다. 이는 결국 clonie가 특정 인간의 기억·성향을 시간에 걸쳐 얼마나 충실하게 재현하는지—즉 believability와 fidelity를 정량화하는 문제로 직결되며, MedAgentBench나 Agent Laboratory 같은 벤치마크형 연구가 그 평가 틀의 초기 단서를 제공한다.
+
+### 개인 충실도  
+*38편 · 중앙 인용 1.5 · 연도별 2023:4 2024:12 2025:17 2026:5(부분)*
+
+개인 충실도(Individual fidelity) 영역의 핵심 질문은 LLM 기반 에이전트가 특정 개인의 성격·말투·기억을 얼마나 일관되게 재현하는가이다. Character-LLM(Shao)은 학습 가능한 역할극 에이전트를, RoleLLM(Wang)은 벤치마킹과 유도 기법을 통해 정립된 축이다. PersonaLLM(Jiang, 2023/2024 중복 게재)은 Big5 성격 특질 표현 능력을, Wang(2025)은 성격 에뮬레이션 평가를 다뤄 측정 축은 어느 정도 자리 잡았다. 반면 Tseng의 서베이가 지적하듯 역할극과 개인화(personalization)의 개념적 경계, 장기 일관성 평가 방법은 열려 있다. 자유형 오픈월드 상호작용에서는 통제된 프롬프트가 아닌 예측 불가능한 상황 전개 속에서 believability를 어떻게 정량화할지가 관건이며, CARE-AD처럼 특정 도메인 멀티에이전트 적용 사례는 있으나 개방형 환경에서의 개인 충실도 표준 척도는 아직 부재하다.
+
+## 4. 핵심 판정 — '열린 세계, 정답 없는 개인 believability 측정'은 정말 비어 있나
+
+당신 레포의 부정 주장을 전제하지 않고, **개인 충실도·검증 지역(B+E)의 170편이 실제로 무엇을 어떻게 측정하는지**를 한 편씩 분류해 시험했다.
+
+**측정 방법 분포 (fidelity를 실제로 재는 100편 기준):**
+
+| 측정 패러다임 | 편수 | 정답(ground truth) 필요? |
+|---|---|---|
+| 집단 분포 대 실제 데이터 | 35 | 필요(집단) |
+| 고정 문항 대 개인 정답 | 31 | 필요(개인) |
+| 고정 벤치마크 정확도 | 10 | 필요 |
+| 열린 행동의 인간 평가 | 22 | **불필요** |
+| 참조 없는 일관성 채점 | 2 | **불필요** |
+
+**판정.** 정답이 필요 없는 칸(OPEN_RATING+REFFREE)은 총 24편. 그중 *자유형·다회전 오픈 상호작용에서 개인의 충실도를* 재는 것으로 좁히면 후보 19편, 엄격 검증 후 **약 8편**만 남는다. 즉:
+
+- **'완전히 비어 있다'는 틀렸다** — 정답 없이 오픈 상호작용의 개인 일관성을 재려는 시도가 실재한다.
+- **'정립된 표준이 없다'는 맞다** — 그 8편은 전부 **20인용 미만·최근·방법론이 제각각**이고, 상위 인용 후보(RoleLLM 96, Character-LLM 101)는 사실 참조 정답(Rouge-L / 인물의 알려진 사실)에 기대므로 '정답 없는' 사례로는 약하다.
+
+**→ 연구적 함의.** 당신의 갭은 '무(無)'가 아니라 **'미정립'**이다. novelty를 '아무도 안 했다'로 주장하면 아래 8편에 반박당한다. 대신 **'흩어진 시도를 통합·검증한 표준이 없고, clonie의 실사용자+오픈월드 데이터가 그 표준을 세울 자산'**으로 포지셔닝하는 것이 방어 가능하다.
+
+### 그 칸을 이미 차지한 논문들 (반드시 정독·인용)
+
+당신 novelty의 직접 이웃. 없다고 말하면 안 되고, 딛고 올라서야 할 선행연구다.
+
+| 논문 | 연도 | 인용 | 성격 |
+|---|---|---|---|
+| Character-LLM: A Trainable Agent for Role-Playing | 2023 | 101 | LLM-as-judge on open-ended interviews, but scored against the target character's |
+| RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abili | 2024 | 96 | Free-form roleplay judged, but uses reference-answer (Rouge-L/GPT vs ground-trut |
+| “You Always Get an Answer”: Analyzing Users’ Interaction with AI-G | 2025 | 15 | Free-form Q&A with individual personas, no fixed answer key — clean refuter |
+| LLM Agents in Interaction: Measuring Personality Consistency and L | 2024 | 7 | Persona agents in open dialogue, reference-free consistency — clean refuter |
+| Conformity, Confabulation, and Impersonation: Persona Inconstancy  | 2024 | 6 | Individual persona stability in free-form multi-agent debate, no answer key — cl |
+| AI-LieDar : Examine the Trade-off Between Utility and Truthfulness | 2025 | 6 | Agents in open multi-turn dialogue judged reference-free for truthfulness — clea |
+| PersonaGym: Evaluating Persona Agents and LLMs | 2024 | 4 | Dynamic free-form persona evaluation, reference-free PersonaScore — clean refute |
+| Virtual Personas for Language Models via an Anthology of Backstori | 2024 | 3 | Backstory-conditioned personas in open-ended interaction, reference-free — clean |
+
+## 5. 다음에 깊게 읽을 것 (당신 각도: 오픈월드 개인 believability)
+
+우선순위순. §4의 8편이 **1순위**(직접 선행연구)이고, 아래는 그 주변 토대.
+
+1. **측정축 최전선** — §4 표의 8편 전부. 특히 *PersonaGym*(reference-free PersonaScore), *LLM Agents in Interaction*(상호작용 중 성격 일관성), *Conformity/Confabulation*(다회전 페르소나 안정성). clonie 평가 지표 설계의 직접 재료.
+
+2. **비판의 천장** — Wang *Nature MI*(LLMs harmfully flatten, 2402.01908), Santurkar *Whose Opinions*(2303.17548), CoMPosT(2310.11501). '왜 균질화가 프롬프트로 안 풀리나'의 근거. 당신 레포 Q의 이론적 뒷받침.
+
+3. **개인 충실도 축의 정본** — Character-LLM(2311/Shao), RoleLLM, PersonaLLM, Tseng 서베이(role-play vs personalization 경계). 당신이 선 지역의 좌표계.
+
+4. **엔진 이웃** — 기억: MemGPT(2310.08560) → A-MEM(2502.12110) → Mem0(2504.19413)의 궤적. 반성: Reflexion(2303.11366), CoALA(2309.02427). clonie 엔진 설계의 계보.
+
+5. **오픈월드 뿌리** — Generative Agents(2304.03442) 원본과 Concordia(2312.03664), Lyfe Agents. believability 개념의 원산지.
+
+
+## 부록 · 방법과 한계
+
+- **중복 제거**: OpenAlex의 프리프린트/출판판 분리 저장으로 생긴 동일 제목 중복 65건을 최다인용 판만 남기고 병합 → 714→**649편**. 지역 비중·순위는 불변.
+- **코퍼스**: Park 2023/2024 인용 + 10개 주제 검색 → 관련성 필터 → LLM 판정 + 도메인 오염 제거 3라운드 → 649편. 초록 1186편 확보.
+- **지역 분류**: 제목·초록 기반 LLM 분류(6지역+기타), 인용 신호로 보정. 완벽하지 않음 — 경계 논문은 기타(53편)로 뺐다.
+- **랜드마크 인용수**: OpenAlex는 프리프린트/출판판을 분리 저장 → 각 논문의 **최다인용 판**을 canonical로 채택. 코퍼스 밖 인프라 논문(Reflexion 등)의 값은 하한선일 수 있음.
+- **계보 엣지**: 코퍼스가 Park 앵커 중심이라 랜드마크 간 직접 인용 엣지는 희소(3개만 관측). 계보는 인용 엣지가 아니라 **검증된 노드 + 알려진 분야 계보**로 그렸다 — 이 점 명시.
+- **갭 판정**: 170편 1편씩 LLM 분류 후 엄격 재검증. 8편은 재현 가능하도록 arXiv/OpenAlex ID로 코퍼스에 표기.
+- **레포 대조**: 당신 `reading-list.qmd`의 arXiv ID 49개 전부 live arXiv와 대조해 정확 확인(별도 파일 `reading_list_id_check.md`).

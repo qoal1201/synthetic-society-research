@@ -3,6 +3,7 @@ project:
   output-dir: _site
   render:
     - index.qmd
+    - field-map.qmd
     - clonie-comparison.qmd
     - glossary.qmd
     - open-questions.qmd
@@ -19,6 +20,8 @@ website:
     left:
       - text: "일지"
         href: index.qmd
+      - text: "분야 지도"
+        href: field-map.qmd
       - text: "논문 리뷰"
         href: paper-reviews/index.qmd
       - text: "용어집"
