@@ -10,6 +10,7 @@ project:
     - research-log/
     - paper-reviews/
     - reproductions/
+    - foundations/
 
 website:
   title: "Synthetic Society Research"
@@ -24,6 +25,8 @@ website:
         href: glossary.qmd
       - text: "질문"
         href: open-questions.qmd
+      - text: "ML 기초"
+        href: foundations/index.qmd
       - text: "클로니"
         href: clonie-comparison.qmd
     right:
