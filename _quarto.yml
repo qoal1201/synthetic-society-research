@@ -22,8 +22,10 @@ website:
         href: paper-reviews/index.qmd
       - text: "용어집"
         href: glossary.qmd
-      - text: "열린 질문"
+      - text: "질문"
         href: open-questions.qmd
+      - text: "클로니"
+        href: clonie-comparison.qmd
     right:
       - icon: github
         href: https://github.com/qoal1201/synthetic-society-research
@@ -35,3 +37,4 @@ format:
       dark: darkly
     toc: true
     code-copy: true
+    css: styles.css

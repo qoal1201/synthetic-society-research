@@ -1,13 +1,13 @@
 ---
 title: "2411.10109 — LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals"
 date: "2026-06-30"
-description: "실제 1,052명을 2시간 인터뷰로 떠 만든 개인 에이전트. 측정의 눈 — test-retest 천장·정규화 정확도. Day2 — 본문 2패스 + S8 메커니즘 + S9 강건성."
+description: "실제 1,052명을 2시간 인터뷰로 떠 만든 개인 에이전트. 측정의 눈 — test-retest 천장·정규화 정확도. 본문 2패스 + S8 메커니즘 + S9 강건성."
 categories: [review]
 ---
 
 > arXiv: [2411.10109](https://arxiv.org/abs/2411.10109) · Park, Zou, Kamphorst, Egan, Shaw, Hill, Cai, Morris, Liang, Willer, Bernstein / 2024
 > (개정판에서 제목 변경 — 원제 "Generative Agent Simulations of 1,000 People")
-> 상태: 본문 정독 완료(측정틀·방법·결과·메커니즘 S8·강건성 S9·한계) · 클로니 설계 대조는 [전용 문서](../clonie-comparison.qmd)로 분리 · 관련: [용어집](../glossary.qmd) · [열린 질문](../open-questions.qmd) · [계보](../reading-list.qmd)
+> 상태: 본문 정독 완료(측정틀·방법·결과·메커니즘 S8·강건성 S9·한계) · 클로니 설계 대조는 [전용 문서](../clonie-comparison.qmd)로 분리 · 관련: [용어집](../glossary.qmd) · [질문](../open-questions.qmd) · [계보](../reading-list.qmd)
 > 모델: GPT-4o — 전부 단일 모델 + 자기보고를 프롬프트에 주입(파인튜닝 없음). 스몰빌([2304.03442](2304.03442-generative-agents.qmd))이 *닫힌 시뮬*(정답 없음 → believability)이라면, 이 논문은 *진짜 사람*을 데려와 비로소 "정확하냐"를 묻는다.
 
 ## 핵심 주장
@@ -25,7 +25,7 @@ categories: [review]
 - 해법: 각 참가자의 **2주 test-retest 자기일관성**을 천장으로 놓고, 에이전트 점수를 그 천장 대비 비율로 본다. **정규화 정확도 = 에이전트 정확도 ÷ 그 사람의 자기일관성.** 정규화 1.0 = "그 사람이 2주 뒤 자기 답을 재현하는 만큼 에이전트도 맞힌다." (인터뷰 0.83 = raw 65.67% ÷ 자기일관성 79.53%.)
 - 왜 정직한가: 천장을 *꾸준히* 넘으면 잘한 게 아니라 답을 미리 엿본 누수(컨닝) 신호다. 연구에선 부정확(정직한 실패)보다 천장 초과가 더 무거운 죄 → **"점수가 너무 높으면 의심하라."** (우리식 라벨 "천장 정규화", 학계 정식어 noise / reliability ceiling.)
 - 누수 차단 장치: GSS 평가 문항 중 인터뷰 문항과 겹치는 27개를 분류기 + 사람 검수로 제거(54,694쌍 전수 스크리닝). 설문 에이전트 입력에선 평가할 문항을 빼고 준다. 핵심 분석은 사전등록(OSF).
-- 한 줄: **정답이 깨끗하게 고정돼 있지 않은 세계에서 "잘 맞혔나"를 정직하게 재는 법.** 단 이 틀은 *고정 문항* + *(흔들려도) 측정된 정답* 둘을 전제한다 — 클로니 같은 열린 실시간 상호작용엔 둘 다 없다. (→ [열린 질문 Q8](../open-questions.qmd)의 빈 자.)
+- 한 줄: **정답이 깨끗하게 고정돼 있지 않은 세계에서 "잘 맞혔나"를 정직하게 재는 법.** 단 이 틀은 *고정 문항* + *(흔들려도) 측정된 정답* 둘을 전제한다 — 클로니 같은 열린 실시간 상호작용엔 둘 다 없다. (→ [질문 Q8](../open-questions.qmd)의 빈 자.)
 
 ::: {.callout-note title="🧑 선호"}
 test-retest 천장(예: 60%)을 넘으면 그건 부정확한 거야?

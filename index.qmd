@@ -11,7 +11,7 @@ listing:
 
 인간 ↔ AI가 상호작용하는 *합성사회*를 공부하고 기록한다.
 
-> 지금 · 계보 논문 정독 중 · 추적 중인 열린 질문 9개
+> 지금 · 계보 논문 정독 중 · 추적 중인 질문 9개
 
 ## 일지
 
@@ -20,4 +20,4 @@ listing:
 
 ---
 
-필요하면 들어가는 곳 — [논문 리뷰](paper-reviews/index.qmd) · [용어집](glossary.qmd) · [열린 질문](open-questions.qmd)
+필요하면 들어가는 곳 — [논문 리뷰](paper-reviews/index.qmd) · [용어집](glossary.qmd) · [질문](open-questions.qmd)
