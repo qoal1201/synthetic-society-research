@@ -38,6 +38,8 @@ format:
     theme:
       light: flatly
       dark: darkly
+    mermaid:
+      theme: neutral
     toc: true
     code-copy: true
     css: styles.css

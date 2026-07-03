@@ -28,3 +28,6 @@ node_modules/
 
 # Local-only — 개인 작업 메모 (공개 안 함)
 CLAUDE.md
+
+# Local-only — 세션 인계용 백로그
+BACKLOG.local.md
