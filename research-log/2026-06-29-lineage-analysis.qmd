@@ -1,6 +1,7 @@
 ---
 title: "합성사회 — 선행 논문 분석 (진행중)"
 date: "2026-06-29"
+description: "Smallville → Park 2024 → Hullman 세 편을 해부하고, 열린 세계에는 검증틀이 없다는 잠정 결론에 도달한 흐름"
 categories: [journal]
 ---
 

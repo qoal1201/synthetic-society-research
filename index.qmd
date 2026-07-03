@@ -5,22 +5,23 @@ listing:
   contents: "research-log/2*.qmd"
   sort: "date desc"
   type: default
-  fields: [date, title]
+  fields: [date, title, description]
   date-format: "YYYY-MM-DD"
 ---
 
-인간 ↔ AI가 상호작용하는 *합성사회*를 공부하고 기록한다.
+인간과 AI가 섞여 상호작용하는 사회 — **합성사회**를 공부하고 기록한다. 지금 쫓는 질문 하나: *정답이 없는 열린 세계에서, AI로 만든 개인이 "그 사람답게" 행동하는지를 어떻게 재나.*
 
-> 지금 · [분야 지도](field-map.qmd)를 마일스톤 정독으로 검증 중 · 추적 중인 질문 9개
-
-**고정 · [분야 지도 — LLM 에이전트로 인간을 시뮬레이션하기](field-map.qmd)**
-분야 전체(649편)를 여섯 지역으로 조망하는 페이지. [현재 작업호](research-log/2026-07-03-field-map.qmd)가 이 지도를 마일스톤 정독으로 검증하며 갱신한다.
+- **[분야 지도](field-map.qmd)** — 이 분야 전체가 어떻게 생겼나. 649편을 여섯 지역으로 나눠 조망하고, 위 질문이 어느 자리에 비어 있는지 짚는다. 처음이면 여기서 시작.
+- **[논문 리뷰](paper-reviews/index.qmd)** — 핵심 논문을 한 편씩 비판적으로 해부한다.
+- **[질문](open-questions.qmd)** — 공부하며 쌓인 열린 질문들. 위의 질문도 여기서 자랐다(Q7·Q8).
 
 ## 일지
+
+공부 과정의 기록, 최신순.
 
 ::: {#journal}
 :::
 
 ---
 
-필요하면 들어가는 곳 — [논문 리뷰](paper-reviews/index.qmd) · [용어집](glossary.qmd) · [질문](open-questions.qmd)
+참고 — [용어집](glossary.qmd) · [계보·읽을거리](reading-list.qmd)
