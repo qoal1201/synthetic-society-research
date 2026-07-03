@@ -1,3 +1,12 @@
+/* 한국어 본문 가독성: Pretendard 웹폰트 + 행간 (2026-07-04, 4안 비교 후 채택).
+   @import는 스펙상 다른 규칙보다 앞에 와야 한다. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  line-height: 1.75;
+}
+
 /* 개별 문서 상단의 자동 생성 메타(발행일·카테고리 배지)를 숨긴다.
    listing(홈·일지 목록)의 날짜 정렬/표시는 각 qmd 프론트매터의
    date/categories 값을 그대로 쓰므로 영향 없음 — 문서 자체 상단
