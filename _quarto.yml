@@ -3,6 +3,7 @@ project:
   output-dir: _site
   render:
     - index.qmd
+    - field-map.qmd
     - clonie-comparison.qmd
     - glossary.qmd
     - open-questions.qmd
