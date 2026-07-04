@@ -4,15 +4,15 @@ description: "분야 지도 §4가 식별한 인접 선행연구 8편의 측정 
 date: "2026-07-03"
 ---
 
-> 상태: 자동 조사 초안 기반(전문 5편 · 초록 3편) · 초록 기반 3편은 판정 유보 · 각 논문을 정독할 때마다 갱신한다 — 진행은 [일지](../research-log/2026-07-03-field-map.qmd)에. 저자·게재처·인용수는 조사 기록(OpenAlex) 기반이며 개별 재검증 전.
+> 상태: 자동 조사 초안 기반(전문 5편 · 초록 3편) · 초록 기반 3편은 판정 유보 · 각 논문을 정독할 때마다 갱신한다 — 진행은 [일지](../research-log/2026-07-03-field-map.qmd)에. 저자·게재처·arXiv ID는 arXiv·DBLP·ACL Anthology 원기록과 직접 대조해 확인했다. 인용수는 OpenAlex 기준이며 표본 대조 전.
 
 [분야 지도 §4](../field-map.qmd)가 갭에 인접한 것으로 식별한 8편을 여기서 해부한다. 갭의 정의는 세 조건의 교집합이다 — (a) **고정된 정답 기준(ground truth) 없이**, (b) **집단이 아닌 개인(단일 페르소나) 단위로**, (c) **고정 과제가 아닌 자유형·열린 상호작용**에서 충실도를 측정하는가.
 
-8편 중 **5편은 전문(full-text) 정독** 기반으로 분석했고, **3편(LLM Agents in Interaction, PersonaGym, Virtual Personas)은 전문 접근이 차단**되어 초록만으로 분석했다. 초록 기반 3편은 본문에 **'(초록 기반)'**으로 명시하고, 초록만으로 확정할 수 없는 기준은 판정을 유보(△)했다.
+8편 중 **5편은 전문(full-text) 정독** 기반으로 분석했고, **3편(LLM Agents in Interaction, PersonaGym, Virtual Personas)은 자동 조사 시점에 전문을 확보하지 못해** 초록만으로 분석했다. 확인 결과 세 편 모두 공개 접근이 가능한 논문이었다(당시 "차단"은 조사 도구의 접근 실패). 출판본 전문은 확보해 두었고, 정독하는 대로 판정을 갱신한다. 초록 기반 3편은 본문에 **'(초록 기반)'**으로 명시하고, 초록만으로 확정할 수 없는 기준은 판정을 유보(△)했다.
 
 ## 종합
 
-전문을 직접 읽고 나서 드러난 가장 중요한 사실은, **초록만 보면 정답 기준이 없어 보였던 논문들조차 실제로는 대부분 참조(레퍼런스) 정보에 기대고 있다**는 점이다. RoleLLM은 자유형 역할극처럼 보이지만 정확도를 **참조 답변 대비 Rouge-L**로 채점하고(정답 없이: 아니오), "You Always Get an Answer"는 **'답변 불가'라는 정답을 미리 정의**해 정오답을 판정하며(정답 없이: 아니오), Character-LLM·Conformity·AI-LieDar는 각각 사전 프로필 정합성·인간 설문 분포 정렬·시나리오 내 숨겨진 사실이라는 형태로 **부분적으로 참조 정보를 사용**한다(부분). 즉 '정답 없음 × 개인 단위 × 열린 상호작용' 세 조건을 모두 깨끗하게 충족하는 논문은, 초록 수준 검토가 시사했던 것보다 **오히려 더 드물다** — 개인 단위(b)는 여러 편이 충족하고 열린 상호작용(c)도 부분적으로 나타나지만, **정답 없음(a)을 온전히 만족하는 논문은 전문 확인 범위 내 없다**(전부 ✕ 아니면 △). 이 확인은 [Q7·Q8](../open-questions.qmd)의 "정립된 방법 부재" 판정을 약화가 아니라 강화한다. 단 전문 미확인 3편이 남아 있으므로 최종 확정은 그 3편을 확인한 뒤다(작업호 M2).
+전문을 직접 읽고 나서 드러난 가장 중요한 사실은, **초록만 보면 정답 기준이 없어 보였던 논문들조차 실제로는 대부분 참조(레퍼런스) 정보에 기대고 있다**는 점이다. RoleLLM은 자유형 역할극처럼 보이지만 정확도를 **참조 답변 대비 Rouge-L**로 채점하고(정답 없이: 아니오), "You Always Get an Answer"는 **'답변 불가'라는 정답을 미리 정의**해 정오답을 판정하며(정답 없이: 아니오), Character-LLM·Conformity·AI-LieDar는 각각 사전 프로필 정합성·인간 설문 분포 정렬·시나리오 내 숨겨진 사실이라는 형태로 **부분적으로 참조 정보를 사용**한다(부분). 즉 '정답 없음 × 개인 단위 × 열린 상호작용' 세 조건을 모두 깨끗하게 충족하는 논문은, 초록 수준 검토가 시사했던 것보다 **오히려 더 드물다** — 개인 단위(b)는 여러 편이 충족하고 열린 상호작용(c)도 부분적으로 나타나지만, **정답 없음(a)을 온전히 만족하는 논문은 전문 확인 범위 내 없다**(전부 ✕ 아니면 △). 이 확인은 [Q7·Q8](../open-questions.qmd)의 "정립된 방법 부재" 판정을 약화가 아니라 강화한다. 단 전문 미확인 3편이 남아 있으므로 최종 확정은 그 3편을 정독한 뒤다.
 
 ## 비교표
 
@@ -27,13 +27,13 @@ date: "2026-07-03"
 | PersonaGym: Evaluating Persona Agents and LLMs | 2024 | 4 | 초록 | free-form 동적 평가, PersonaScore 자동 채점 | △ | △ | △ | free-form 동적 평가·PersonaScore 지향은 목표에 가장 근접하나 전문 미확인(세 기준 판정 불가) |
 | Virtual Personas for Language Models via an Anthology of Backstories | 2024 | 3 | 초록 | backstory 조건화로 설문 응답 매칭도 평가 | ✕ | △ | △ | 개별 사용자 매칭·backstory 개인화는 강점이나 평가가 설문 응답 분포(집계) 대비 |
 
-*범례: ○=충족, △=불명/부분, ✕=미충족. 근거: 전문=full-text 정독, 초록=전문 차단으로 초록만 분석. 인용수는 OpenAlex 기준.*
+*범례: ○=충족, △=불명/부분, ✕=미충족. 근거: 전문=full-text 정독, 초록=조사 시점에 전문을 확보하지 못해 초록만 분석. 연도는 첫 공개(arXiv 프리프린트) 기준이라 게재 연도와 다를 수 있다(예: PersonaGym은 2024년 공개, Findings of EMNLP 2025 게재). 인용수는 OpenAlex 기준.*
 
 ## 논문별 심층 분석
 
 ### Character-LLM: A Trainable Agent for Role-Playing
 
-*2023 · 인용 101 · Shao et al. · EMNLP 2023 · 근거: 전문*
+*2023 · 인용 101 · Shao et al. · EMNLP 2023 · [arXiv:2310.10158](https://arxiv.org/abs/2310.10158) · 근거: 전문*
 
 **측정 방법.** 훈련된 캐릭터-LLM을 '인터뷰'하여 정체성 식별 가능 여부를 점수화하고, 라벨링된 장면(labeled scenes)과 LLM 기반 평가자를 사용해 Alpaca·Vicuna 등 프롬프트 기반 모델과 비교한다. 구체적 채점 척도·수치는 확인한 본문 범위에 제시되지 않음.
 
@@ -51,7 +51,7 @@ date: "2026-07-03"
 
 ### RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models
 
-*2024 · 인용 96 · Wang et al. · Findings of ACL 2024 · 근거: 전문*
+*2024 · 인용 96 · Wang et al. · Findings of ACL 2024 · [arXiv:2310.00746](https://arxiv.org/abs/2310.00746) · 근거: 전문*
 
 **측정 방법.** Rouge-L 세 가지 지표(스타일 모방·정확도·지식 포착), GPT 평가, 인간 평가를 병행. 스타일 유사도는 대화 예시와의 Rouge-L, 정답 기반 질문은 정확도 Rouge-L로 채점.
 
@@ -69,7 +69,7 @@ date: "2026-07-03"
 
 ### "You Always Get an Answer": Analyzing Users' Interaction with AI-Generated Personas Given Unanswerable Questions and Risk of Hallucination
 
-*2025 · 인용 15 · Kaate et al. · ACM IUI 2025 · 근거: 전문*
+*2025 · 인용 15 · Kaate et al. · ACM IUI 2025 · [doi:10.1145/3708359.3712160](https://doi.org/10.1145/3708359.3712160) · 근거: 전문*
 
 **측정 방법.** 설문 데이터 기반 AI 페르소나 시스템(Survey2Persona)에 54명 참가자가 답변 불가능 질문을 포함한 질문을 던짐. 페르소나 답변의 할루시네이션 여부(52% 오답 제공)와 사용자의 오답 수용 여부(57% 수용)를 집계 통계로 산출, 성별별 유의성 검정, 답변 유형 4개 테마로 질적 코딩.
 
@@ -87,7 +87,7 @@ date: "2026-07-03"
 
 ### LLM Agents in Interaction: Measuring Personality Consistency and Linguistic Alignment in Interacting Populations of Large Language Models
 
-*2024 · 인용 7 · Frisch & Giulianelli · arXiv · 근거: 초록*
+*2024 · 인용 7 · Frisch & Giulianelli · PERSONALIZE 워크숍(EACL 2024) · [arXiv:2402.02896](https://arxiv.org/abs/2402.02896) · 근거: 초록*
 
 **(초록 기반 — 전문 미확인)**
 
@@ -101,7 +101,7 @@ date: "2026-07-03"
 
 ### Conformity, Confabulation, and Impersonation: Persona Inconstancy in Multi-Agent LLM Collaboration
 
-*2024 · 인용 6 · Baltaji et al. · C3NLP @ ACL 2024 · 근거: 전문*
+*2024 · 인용 6 · Baltaji et al. · C3NLP 워크숍(ACL 2024) · [arXiv:2405.03862](https://arxiv.org/abs/2405.03862) · 근거: 전문*
 
 **측정 방법.** 온보딩/토론 중/반성 3단계의 사설(private) 응답을 교차 비교하여 동조(conformity)·작화(confabulation)·사칭(impersonation)을 분류. 온보딩 응답은 인간 설문(GlobalOpinionQA) 분포와 cross entropy로 비교해 페르소나 불일치 에이전트를 제외. 그룹 의견 다양성은 Shannon entropy로 클래스화하고, 동조는 토론 중 발언이 사전/사후 응답과 다를 때, 작화는 사후 응답이 사전 응답·토론 내용과 무관할 때, 사칭은 다른 국적 언급을 정규표현식으로 탐지.
 
@@ -119,7 +119,7 @@ date: "2026-07-03"
 
 ### AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents
 
-*2025 · 인용 6 · Su et al. · NAACL 2025 · 근거: 전문*
+*2025 · 인용 6 · Su et al. · NAACL 2025 · [arXiv:2409.09013](https://arxiv.org/abs/2409.09013) · 근거: 전문*
 
 **측정 방법.** Sotopia 시뮬레이터로 목표 달성(utility) 점수를 산출하고, 심리학 문헌 기반으로 개발한 평가기(세분화 거짓말 탐지기)로 무응답/부분 거짓(은폐·모호화)/완전 거짓을 등급 분류. 2,160개 시뮬레이션에 대해 모델별 진실성 비율·거짓 비율을 비교하고, 프롬프트로 진실/거짓을 유도하는 steering 실험도 수행(거짓 유도 시 +40%p, 진실 유도 시 utility −15% 등).
 
@@ -137,7 +137,7 @@ date: "2026-07-03"
 
 ### PersonaGym: Evaluating Persona Agents and LLMs
 
-*2024 · 인용 4 · Samuel et al. · arXiv · 근거: 초록*
+*2024 · 인용 4 · Samuel et al. · Findings of EMNLP 2025 · [arXiv:2407.18416](https://arxiv.org/abs/2407.18416) · 근거: 초록*
 
 **(초록 기반 — 전문 미확인)**
 
@@ -147,11 +147,11 @@ date: "2026-07-03"
 
 **초록만으로 확정 불가:** 세 기준 모두 초록에 명시적 근거가 부족. "10,000개 질문"이라는 표현은 사전 설계된 질문 배터리에 가까워 완전한 자유형 상호작용이 아닐 가능성을 남긴다.
 
-**클로니 적용.** free-form 환경의 페르소나 충실도를 동적으로 평가하고 참조 없는 자동 지표(PersonaScore)로 채점한다는 지향은 8편 중 이 연구의 목표에 가장 근접해 보인다. 그러나 전문 접근이 차단돼 세 기준 모두 확정할 수 없다 — 다음 정독 1순위.
+**클로니 적용.** free-form 환경의 페르소나 충실도를 동적으로 평가하고 참조 없는 자동 지표(PersonaScore)로 채점한다는 지향은 8편 중 이 연구의 목표에 가장 근접해 보인다. 그러나 전문 미정독이라 세 기준 모두 확정할 수 없다 — 전문(게재본)은 확보해 두었다, 다음 정독 1순위.
 
 ### Virtual Personas for Language Models via an Anthology of Backstories
 
-*2024 · 인용 3 · Moon et al. · arXiv · 근거: 초록*
+*2024 · 인용 3 · Moon et al. · EMNLP 2024 · [arXiv:2407.06576](https://arxiv.org/abs/2407.06576) · 근거: 초록*
 
 **(초록 기반 — 전문 미확인)**
 
