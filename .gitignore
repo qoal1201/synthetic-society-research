@@ -35,6 +35,3 @@ _preview/
 
 # Local-only — 논문 PDF 원본 (저작권/용량 — 공개 repo에 안 올림)
 _papers/
-
-# Local-only — CLAUDE.md 개정 드래프트 (검수 후 교체·삭제)
-CLAUDE.draft.md
