@@ -7,6 +7,16 @@ body {
   line-height: 1.75;
 }
 
+/* 좁은 화면: 넓은 표는 페이지 전체가 아니라 표 안에서 가로 스크롤.
+   Quarto는 표를 스크롤 컨테이너로 감싸지 않아, 표가 본문 폭을 뚫으면
+   페이지 전체가 가로로 흔들린다 (390px 실측: 용어집 142px·지도 72px 넘침). */
+@media (max-width: 767.98px) {
+  main.content table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
 /* 개별 문서 상단의 자동 생성 메타(발행일·카테고리 배지)를 숨긴다.
    listing(홈·일지 목록)의 날짜 정렬/표시는 각 qmd 프론트매터의
    date/categories 값을 그대로 쓰므로 영향 없음 — 문서 자체 상단

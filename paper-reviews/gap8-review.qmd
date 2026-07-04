@@ -16,18 +16,18 @@ date: "2026-07-03"
 
 ## 비교표
 
-| 논문 | 연도 | 인용 | 근거 | 측정 방법(요약) | 정답 없이? | 개인 단위? | 열린 상호작용? | 클로니 적용 핵심 |
-|---|---|---|---|---|:---:|:---:|:---:|---|
-| Character-LLM: A Trainable Agent for Role-Playing | 2023 | 101 | 전문 | 인물별 개별 훈련 후 인터뷰식 LLM 평가 | △ | ○ | ○ | 개인 훈련+인터뷰식 자유 상호작용은 클로니와 유사하나 사전 프로필 정합성 채점에 의존 |
-| RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models | 2024 | 96 | 전문 | Rouge-L(스타일/정확도/지식)+GPT·인간 평가 | ✕ | ○ | △ | Rouge-L 정답 기반 채점이라 정답 없는 즉흥 대화엔 부적합; 100캐릭터 프로파일링법은 참고 |
-| "You Always Get an Answer": Analyzing Users' Interaction with AI-Generated Personas Given Unanswerable Questions and Risk of Hallucination | 2025 | 15 | 전문 | 54명 실험, 할루시네이션·오답수용률 집계+질적코딩 | ✕ | △ | △ | 할루시네이션·오답 수용 집계는 안전성엔 유용하나 정답키·단발 질문 구조가 한계 |
-| LLM Agents in Interaction: Measuring Personality Consistency and Linguistic Alignment in Interacting Populations of Large Language Models | 2024 | 7 | 초록 | 성격검사+협업 글쓰기로 개성 일관성·언어 정렬 측정 | △ | △ | ○ | 개방형 대화 속 개성 일관성 측정 지향은 정렬되나 성격검사·집단 설정(전문 미확인) |
-| Conformity, Confabulation, and Impersonation: Persona Inconstancy in Multi-Agent LLM Collaboration | 2024 | 6 | 전문 | 3단계 사설 응답 교차비교로 동조·작화·사칭 분류 | △ | ○ | △ | 개인별 사전/사후 응답 추적으로 멀티턴 개성 드리프트 진단 가능; 단 여론조사 문항 기반 |
-| AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents | 2025 | 6 | 전문 | Sotopia 멀티턴+진실성 탐지기로 utility·거짓 등급화 | △ | △ | ○ | Sotopia 멀티턴 개방 대화+진실성 탐지기는 참고 가치; 단 숨겨진 정답 정보 대비 판정 |
-| PersonaGym: Evaluating Persona Agents and LLMs | 2024 | 4 | 초록 | free-form 동적 평가, PersonaScore 자동 채점 | △ | △ | △ | free-form 동적 평가·PersonaScore 지향은 목표에 가장 근접하나 전문 미확인(세 기준 판정 불가) |
-| Virtual Personas for Language Models via an Anthology of Backstories | 2024 | 3 | 초록 | backstory 조건화로 설문 응답 매칭도 평가 | ✕ | △ | △ | 개별 사용자 매칭·backstory 개인화는 강점이나 평가가 설문 응답 분포(집계) 대비 |
+| 논문 | 연도 | 인용 | 근거 | 정답 없이? | 개인 단위? | 열린 상호작용? | 클로니 적용 핵심 |
+|---|---|---|---|:---:|:---:|:---:|---|
+| Character-LLM: A Trainable Agent for Role-Playing | 2023 | 101 | 전문 | △ | ○ | ○ | 개인 훈련+인터뷰식 자유 상호작용은 클로니와 유사하나 사전 프로필 정합성 채점에 의존 |
+| RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models | 2024 | 96 | 전문 | ✕ | ○ | △ | Rouge-L 정답 기반 채점이라 정답 없는 즉흥 대화엔 부적합; 100캐릭터 프로파일링법은 참고 |
+| "You Always Get an Answer": Analyzing Users' Interaction with AI-Generated Personas Given Unanswerable Questions and Risk of Hallucination | 2025 | 15 | 전문 | ✕ | △ | △ | 할루시네이션·오답 수용 집계는 안전성엔 유용하나 정답키·단발 질문 구조가 한계 |
+| LLM Agents in Interaction: Measuring Personality Consistency and Linguistic Alignment in Interacting Populations of Large Language Models | 2024 | 7 | 초록 | △ | △ | ○ | 개방형 대화 속 개성 일관성 측정 지향은 정렬되나 성격검사·집단 설정(전문 미확인) |
+| Conformity, Confabulation, and Impersonation: Persona Inconstancy in Multi-Agent LLM Collaboration | 2024 | 6 | 전문 | △ | ○ | △ | 개인별 사전/사후 응답 추적으로 멀티턴 개성 드리프트 진단 가능; 단 여론조사 문항 기반 |
+| AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents | 2025 | 6 | 전문 | △ | △ | ○ | Sotopia 멀티턴 개방 대화+진실성 탐지기는 참고 가치; 단 숨겨진 정답 정보 대비 판정 |
+| PersonaGym: Evaluating Persona Agents and LLMs | 2024 | 4 | 초록 | △ | △ | △ | free-form 동적 평가·PersonaScore 지향은 목표에 가장 근접하나 전문 미확인(세 기준 판정 불가) |
+| Virtual Personas for Language Models via an Anthology of Backstories | 2024 | 3 | 초록 | ✕ | △ | △ | 개별 사용자 매칭·backstory 개인화는 강점이나 평가가 설문 응답 분포(집계) 대비 |
 
-*범례: ○=충족, △=불명/부분, ✕=미충족. 근거: 전문=full-text 정독, 초록=조사 시점에 전문을 확보하지 못해 초록만 분석. 연도는 첫 공개(arXiv 프리프린트) 기준이라 게재 연도와 다를 수 있다(예: PersonaGym은 2024년 공개, Findings of EMNLP 2025 게재). 인용수는 OpenAlex 기준.*
+*범례: ○=충족, △=불명/부분, ✕=미충족. 근거: 전문=full-text 정독, 초록=조사 시점에 전문을 확보하지 못해 초록만 분석. 각 논문의 측정 방법은 아래 심층 분석에. 연도는 첫 공개(arXiv 프리프린트) 기준이라 게재 연도와 다를 수 있다(예: PersonaGym은 2024년 공개, Findings of EMNLP 2025 게재). 인용수는 OpenAlex 기준.*
 
 ## 논문별 심층 분석
 
