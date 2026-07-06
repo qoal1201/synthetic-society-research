@@ -29,8 +29,9 @@ node_modules/
 # Local-only — 개인 작업 메모 (공개 안 함)
 CLAUDE.md
 
-# Local-only — 세션 인계용 백로그
+# Local-only — 세션 인계용 백로그 + 3-repo 공통 수신함
 BACKLOG.local.md
+INBOX.md
 _preview/
 
 # Local-only — 논문 PDF 원본 (저작권/용량 — 공개 repo에 안 올림)
