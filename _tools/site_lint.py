@@ -130,6 +130,42 @@ def check_status_line(path, lines):
             warnings.append(f"{rel} 가든 문서인데 상단 '> 상태:' 줄이 없음")
 
 
+def table_rows(text, score_header):
+    """파이프 표에서 {첫 셀: 점수 셀} 추출. 헤더에서 score_header 열 위치를 찾는다."""
+    rows, score_idx = {}, None
+    for line in text.splitlines():
+        s = line.strip()
+        if not s.startswith("|"):
+            continue
+        cells = [c.strip() for c in s.strip("|").split("|")]
+        if score_header in cells:
+            score_idx = cells.index(score_header)
+            continue
+        if score_idx is not None and cells and not set(cells[0]) <= set(":- "):
+            if len(cells) > score_idx:
+                rows[cells[0]] = cells[score_idx]
+    return rows
+
+
+def check_kaggle_sync():
+    """foundations 대회 표 ↔ kaggle README 점수 동기 (진실원 = kaggle README).
+
+    2026-07-07 실측: S6E7 점수 0.86217이 foundations 표에 누락돼 있던 드리프트를 이 대조로 발견.
+    kaggle repo가 없는 환경(예: 클론만 받은 외부)에서는 조용히 건너뛴다.
+    """
+    kaggle_readme = ROOT.parent / "kaggle" / "README.md"
+    foundations = ROOT / "foundations" / "index.qmd"
+    if not kaggle_readme.exists() or not foundations.exists():
+        return
+    f_rows = table_rows(foundations.read_text(encoding="utf-8"), "최고 점수")
+    k_rows = table_rows(kaggle_readme.read_text(encoding="utf-8"), "최고 점수")
+    for name, k_score in k_rows.items():
+        if name not in f_rows:
+            warnings.append(f"foundations/index.qmd 표에 kaggle README의 '{name}' 행이 없음")
+        elif f_rows[name] != k_score:
+            errors.append(f"foundations/index.qmd '{name}' 점수 '{f_rows[name]}' ≠ kaggle README '{k_score}' (진실원=kaggle README)")
+
+
 def main():
     for path in PUBLIC_FILES:
         text = path.read_text(encoding="utf-8")
@@ -139,6 +175,8 @@ def main():
         check_links(path, text)
         check_jargon(path.relative_to(ROOT), lines, fenced)
         check_status_line(path, lines)
+
+    check_kaggle_sync()
 
     for e in errors:
         print(f"[오류] {e}")
