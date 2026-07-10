@@ -41,3 +41,4 @@ _papers/
 
 # Local-only — 재현용 외부 repo 클론 + venv (스모크 테스트, 2026-07-06)
 _repro/
+_workspace/
