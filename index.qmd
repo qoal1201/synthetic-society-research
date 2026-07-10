@@ -20,7 +20,7 @@ listing:
 - [Generative Agents](paper-reviews/2304.03442-generative-agents.qmd) — 분야 시조. 아키텍처 4부품과 통제 평가 해부
 - [Park 2024 (self-report)](paper-reviews/2411.10109-self-report-agents.qmd) — 실제 개인 1,052명 시뮬레이션과 측정틀
 - [Hullman et al.](paper-reviews/2602.15785-validating-llm-simulations.qmd) — LLM 시뮬레이션은 언제 증거가 되나
-- [갭 후보 8편](paper-reviews/gap8-review.qmd) — "정답 없는 개인 충실도 측정"에 인접한 선행연구 합본
+- [빈자리에 인접한 8편](paper-reviews/gap8-review.qmd) — "정답 없는 개인 충실도 측정"에 인접한 선행연구 합본
 
 ## 실험
 
