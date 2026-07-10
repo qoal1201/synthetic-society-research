@@ -5,7 +5,7 @@
 1. 깨진 파이프 표 — 헤더 구분선 없는 표 블록 (2026-07-07 용어집에서 실측된 버그 클래스:
    표 사이 빈 줄 때문에 뒷부분이 헤더 없는 블록으로 떨어져 파이프 문자가 그대로 렌더됨)
 2. 내부 링크 — 로컬 .qmd/.md 링크의 대상 파일 존재 + {#앵커} 존재 (앵커는 경고 수준)
-3. 방문자 표면의 내부 운영 용어 — research-log(일지)는 제외 (일지 본문 안에서는 허용 규칙)
+3. 방문자 표면의 내부 운영 용어 — 전 공개 파일 대상 (일지 예외는 2026-07-10 재구조로 폐지)
 4. 가든 문서 상단 상태 줄 존재
 
 사용: python3 _tools/site_lint.py  (repo 어디서든)
@@ -22,18 +22,18 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_FILES = (
     sorted(ROOT.glob("*.qmd"))
     + sorted((ROOT / "paper-reviews").glob("*.qmd"))
-    + sorted(p for p in (ROOT / "research-log").glob("*.qmd") if p.name != "index.qmd")
+    + sorted((ROOT / "experiments").glob("*.qmd"))
     + sorted((ROOT / "foundations").glob("*.qmd"))
 )
 
-# 내부 운영 용어 — 일지(research-log) 밖 방문자 표면에서 금지 (CLAUDE.md "방문자 표면 vs 운영 용어")
+# 내부 운영 용어 — 방문자 표면에서 금지 (CLAUDE.md "방문자 표면 vs 운영 용어")
 JARGON_ERROR = ["load-bearing", "just-in-time", "작업호", "진실원"]
 JARGON_WARN = ["마일스톤", "체크포인트", "BACKLOG"]
 
 # 상단에 "> 상태:" 줄이 있어야 하는 가든 문서
 STATUS_REQUIRED = (
-    ["glossary.qmd", "field-map.qmd", "clonie-comparison.qmd", "reading-list.qmd",
-     "open-questions.qmd", "foundations/index.qmd"]
+    ["glossary.qmd", "field-map.qmd", "reading-list.qmd",
+     "experiments/index.qmd", "foundations/index.qmd"]
     + [str(p.relative_to(ROOT)) for p in (ROOT / "paper-reviews").glob("*.qmd")
        if p.name != "index.qmd"]
 )
@@ -109,8 +109,6 @@ def check_links(path, text):
 
 
 def check_jargon(path, lines, fenced):
-    if "research-log" in str(path):
-        return
     for i, line in enumerate(lines, 1):
         if fenced[i - 1]:
             continue

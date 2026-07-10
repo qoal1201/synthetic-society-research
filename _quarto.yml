@@ -4,12 +4,9 @@ project:
   render:
     - index.qmd
     - field-map.qmd
-    - clonie-comparison.qmd
     - glossary.qmd
-    - open-questions.qmd
     - reading-list.qmd
-    - research-log/
-    - "!research-log/index.qmd"
+    - experiments/
     - paper-reviews/
     - foundations/
 
@@ -22,14 +19,10 @@ website:
   twitter-card: true
   navbar:
     left:
-      - text: "일지"
-        href: index.qmd
+      - text: "실험"
+        href: experiments/index.qmd
       - text: "논문 리뷰"
         href: paper-reviews/index.qmd
-      - text: "질문"
-        href: open-questions.qmd
-      - text: "클로니 대조"
-        href: clonie-comparison.qmd
       - text: "ML 기초"
         href: foundations/index.qmd
       - text: "용어집"
