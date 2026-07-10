@@ -1,0 +1,27 @@
+---
+title: "실험"
+listing:
+  id: experiments
+  contents: "2*.qmd"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description]
+  date-format: "YYYY-MM-DD"
+aliases:
+  - /open-questions.html
+---
+
+> 상태: 트랙 신설 — 첫 실험 준비 중.
+
+논문에서 해부한 기술을 직접 작게 만들어 재본다. 방향은 창발하는 합성사회 쪽이고, 실험 하나가 글 하나다.
+
+## 다음 실험 후보
+
+- **최소 아키텍처 재현** — 2023년의 외부 비계(memory·reflection·planning)가 2026년 모델에서 얼마나 의미가 남나. [Generative Agents 리뷰](../paper-reviews/2304.03442-generative-agents.qmd)에서 나온 질문.
+- **임의 상수 민감도** — reflection 임계값 150처럼 민감도 분석 없는 상수가 결과를 얼마나 좌우하나. 같은 리뷰의 빈틈.
+- **열린 세계 자율 에이전트** — OpenLife(arXiv 2606.31046) 방향의 소형 시도.
+
+## 기록
+
+::: {#experiments}
+:::
