@@ -30,10 +30,10 @@ PUBLIC_FILES = (
 JARGON_ERROR = ["load-bearing", "just-in-time", "작업호", "진실원"]
 JARGON_WARN = ["마일스톤", "체크포인트", "BACKLOG"]
 
-# 상단에 "> 상태:" 줄이 있어야 하는 가든 문서
+# 상단에 "> 상태:" 줄이 있어야 하는 가든 문서 — 오독 방지 기능이 있는 곳만
+# (2026-07-12 선호 결정: 장식성 상태 줄은 제거 — 용어집·실험 랜딩·foundations 랜딩은 제외)
 STATUS_REQUIRED = (
-    ["glossary.qmd", "field-map.qmd", "reading-list.qmd",
-     "experiments/index.qmd", "foundations/index.qmd"]
+    ["field-map.qmd", "reading-list.qmd"]
     + [str(p.relative_to(ROOT)) for p in (ROOT / "paper-reviews").glob("*.qmd")
        if p.name != "index.qmd"]
 )
