@@ -164,6 +164,46 @@ def check_kaggle_sync():
             errors.append(f"foundations/index.qmd '{name}' 점수 '{f_rows[name]}' ≠ kaggle README '{k_score}' (진실원=kaggle README)")
 
 
+GLOSSARY_MAX_CHARS = 430  # 항목 본문 장황 경고 문턱 (한 줄 정의 + 설명 문단 1개 기준)
+
+
+def check_glossary():
+    """용어집 구조 규칙(2026-07-12 개편) — 골격·중복·장황을 기계로 감시.
+
+    - #### 헤딩엔 {#앵커} 필수, 파일 내 앵커 중복 금지(07-10 창발 중복 실측 클래스)
+    - 항목 본문 = 문단 2개(한 줄 정의 + 설명 문단 1개) — 초과는 경고
+    - 본문 길이 초과(장황)는 경고 — 넘치는 얘기는 리뷰 본문 몫
+    """
+    glossary = ROOT / "glossary.qmd"
+    if not glossary.exists():
+        return
+    lines = glossary.read_text(encoding="utf-8").splitlines()
+    seen, entries, current = {}, [], None
+    for i, line in enumerate(lines, 1):
+        if line.startswith("#### "):
+            m = ANCHOR_RE.search(line)
+            if not m:
+                errors.append(f"glossary.qmd:{i} 항목 헤딩에 {{#앵커}} 없음")
+            else:
+                anchor = m.group(1)
+                if anchor in seen:
+                    errors.append(f"glossary.qmd:{i} 앵커 중복 {{#{anchor}}} — {seen[anchor]}줄과 충돌")
+                seen[anchor] = i
+            current = (i, [])
+            entries.append(current)
+        elif line.startswith(("## ", "### ")):
+            current = None
+        elif current is not None:
+            current[1].append(line)
+    for i, body in entries:
+        paras = [p for p in "\n".join(body).split("\n\n") if p.strip()]
+        if len(paras) > 2:
+            warnings.append(f"glossary.qmd:{i} 항목 문단 {len(paras)}개 — 골격은 '한 줄 정의 + 설명 문단 1개'")
+        total = sum(len(p) for p in paras)
+        if total > GLOSSARY_MAX_CHARS:
+            warnings.append(f"glossary.qmd:{i} 항목 본문 {total}자 — 장황 후보({GLOSSARY_MAX_CHARS}자 초과), 리뷰 본문으로 뺄 것 검토")
+
+
 def main():
     for path in PUBLIC_FILES:
         text = path.read_text(encoding="utf-8")
@@ -175,6 +215,7 @@ def main():
         check_status_line(path, lines)
 
     check_kaggle_sync()
+    check_glossary()
 
     for e in errors:
         print(f"[오류] {e}")
