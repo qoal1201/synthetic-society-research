@@ -1,0 +1,7 @@
+# foundations/ 폴더 전용 설정 (다른 갈래는 안 건드림).
+# code-fold: 코드는 접어서 기본 숨김 — 독자는 서사를 읽고, 확인하고 싶으면 펼친다.
+# Quarto 기본값이 false(전부 펼침)라 명시하지 않으면 접히지 않는다.
+format:
+  html:
+    code-fold: true
+    code-summary: "코드"
