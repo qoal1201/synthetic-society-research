@@ -1,0 +1,137 @@
+---
+title: "Schelling 1971 — Dynamic Models of Segregation"
+date: "2026-07-16"
+description: "규칙 한 줄에서 아무도 요구하지 않은 분리가 나오는 과정. 창발을 무엇과 비교해 측정하는가에 대한 원전."
+categories: [review]
+---
+
+> Thomas C. Schelling, "Dynamic Models of Segregation", *Journal of Mathematical Sociology* 1971, Vol. 1, pp. 143–186 (DOI [10.1080/0022250X.1971.9989794](https://doi.org/10.1080/0022250X.1971.9989794)) · 인용 4,737회(Semantic Scholar, 2026-07-15 조회)
+> 상태: 공간 근접 모델(선형·격자)까지 정독. 경계 지정 이웃 모델과 티핑 절은 미정독.
+> 방법: 손과 눈으로 한 시뮬레이션. 컴퓨터를 쓰지 않았고 저자는 이동 순서의 엄격한 규칙을 지키지 않았다고 밝힌다(p.155).
+
+## 왜 이 논문인가
+
+창발(emergence)의 사회과학 쪽 원전이고 행위자 기반 모델(agent-based model)의 원조로 통한다. 저자는 컴퓨터 없이 동전과 모눈종이로 이 모델을 돌렸고 이후 Epstein과 Axtell이 이 발상을 전산화해 *Growing Artificial Societies*로 이었다.
+
+이 공부에서의 자리는 다른 데 있다. 분야의 시조 Generative Agents(Park 2023, LLM 에이전트 25명을 가상 마을에 풀어놓은 논문)는 "창발적 사회 행동"을 관측했다고 보고한다. 그런데 그 논문 전문에 Schelling은 한 번도 나오지 않는다. Epstein·Axtell·Sugarscape·Holland·셀룰러 오토마타 같은 복잡계 계보도 검색되지 않는다. GA가 쓰는 emergent의 정의는 §3.4의 한 문장이 전부다: "emergent rather than pre-programmed"(미리 프로그래밍한 것이 아니라 창발한 것).
+
+## 무엇을 했나 — 한 단락
+
+분리(segregation)를 낳는 기제는 여럿이다. 조직된 차별, 경제적 격차, 개인의 차별적 선택. 이 논문은 세 번째만 떼어내 추상 모델로 다룬다(p.144–145). 모델은 두 개다. 공간 근접 모델(spatial proximity model)에서는 각자가 자기 위치를 기준으로 이웃 구성을 보고 불만이면 자리를 옮긴다. 경계 지정 이웃 모델(bounded-neighborhood model)에서는 모두가 공유하는 구역 하나의 색 비율만 본다. 이 리뷰는 앞의 것까지 다룬다.
+
+## 조망 — 5:4를 요구했더니 5:1이 나온다
+
+선형 모델의 셋업은 이렇다(p.149–150).
+
+- 70명(별 35, 영 35)이 일렬로 선다. 초기 배열은 난수표로 정한다.
+- 이웃은 양옆 4명씩 총 8명이다.
+- 규칙은 하나다. 이웃 8명 중 최소 4명이 자기 색이면 만족한다.
+- 불만이면 최소 요구를 채우는 가장 가까운 자리로 가서 끼어든다.
+- 아무도 남의 이동을 예측하지 않는다. "Nobody in this model anticipates the movements of others."(p.150)
+
+초기 불만은 26명이고 2라운드에 전원이 만족한다. 결과는 군집 6개(8·15·10·15·16·6명, 평균 12명)다. 이웃 540쌍 중 440쌍이 같은 색으로, **81.5%**다. 자기 자신을 아홉 번째 구성원으로 세면 평균 5:1이 넘는 동네에 살게 된다.
+
+> "This resulted from individuals' *seeking* a ratio not less than five to four."(p.150)
+
+여기가 흔히 미끄러지는 자리다. 정지 조건이 "8명 중 4명"이므로 전원이 멈춘 상태라면 전원이 최소 50%를 만족한다. 이것은 추론이 아니라 정의상 참이다. 그래서 결과도 50% 근처일 것 같지만 하한 50%와 평균 50%는 다른 값이다. 실제 평균은 81.5%다.
+
+이동 규칙을 보면 간격이 더 벌어진다. 불만인 사람은 "최소 요구를 채우는 가장 가까운 자리"로 간다. 넘치는 자리를 노리지 않고 더 좋은 동네가 멀리 있어도 가지 않는다. 이 판에는 분리를 원하는 사람도, 다수가 되려는 사람도, 남의 수를 읽는 사람도 없다. 전원이 최소만 요구하고 최소만 노렸는데 전원이 81.5%를 얻었다.
+
+## 부품 해부
+
+### 래칫: 오른 쪽은 남고 내린 쪽은 떠난다
+
+이동은 양방향으로 작용한다. 만족하던 사람이 불만이 되기도 하고 불만이던 사람이 만족하기도 한다.
+
+> "Some who were content will become discontent, because like members move out of their neighborhoods or opposite members move in. And some who were discontent become content, as opposite neighbors move away or like neighbors move close."(p.150)
+
+오르는 일과 내리는 일이 둘 다 일어나므로 서로 상쇄될 것 같지만 그렇지 않다. 두 방향의 처지가 다르기 때문이다. 비율이 오른 사람은 만족하므로 그 자리에 남는다. 내려간 사람은 불만이 되어 떠난다. 오른 것은 판에 쌓이고 내린 것은 판에서 빠져나간다. 한 방향으로만 도는 톱니가 되어 누적된다.
+
+저자는 이 비대칭을 한 문장으로 적어뒀다.
+
+> "each person's search for others of like color raises the likelihood that people of like color will *stay* in the place he moves to and those of opposite color will *leave* it."(p.151)
+
+여기에 이동 하나가 여러 사람의 비율을 동시에 올리는 효과가 겹친다.
+
+> "each individual that moves not only *acquires* more neighbors of like color, but *becomes* a like neighbor to more neighbors the more he acquires."(p.159)
+
+이사한 사람은 자기 색 이웃을 얻는 동시에 그 동네 사람들에게 자기 색 이웃이 되어준다. 개인은 자기 문제만 풀었는데 남의 비율도 함께 오른다.
+
+### 특정 결과는 운이고 결과의 성격은 운이 아니다
+
+난수열을 바꾸면 결과가 달라진다. 2라운드는 보장이 아니다. 저자가 그 자리에 괄호로 적어뒀다: "There is no guarantee that two rounds will put everybody in equilibrium. One round may do it, more than two may be required."(p.150) 탁상 실험에서 군집은 5개(평균 14명)에서 7~8개(평균 9~10명)까지 나왔고 최빈값이 6개·12명이다.
+
+같은 난수표의 다른 열로 다시 돌린 판(Fig.3)이 이 구분을 보여준다. 72명에 초기 불만 30명이었고 1라운드에 정리됐다. 걸린 라운드 수도 인원도 다른데 "again we have six groups and the same resulting neighborhood statistics as in the first case"(p.151)로 끝났다. 군집이 6개인 것도 이웃 통계도 첫 판과 같다.
+
+> "The *particular* outcome will depend very much on the order in which discontented stars and zeros are moved, the *character* of the outcome not very much."(p.156)
+
+누가 어디 서는지, 몇 라운드가 걸리는지, 군집이 몇 개인지는 그 판의 운이다. 덩어리가 생기고 아무도 요구하지 않은 수준의 분리가 나온다는 것은 운이 아니다. 눈송이의 모양은 그날의 습도와 온도에 달렸지만 6각이라는 것은 그렇지 않은 것과 같다.
+
+## 평가 해부 — 무작위 판을 옆에 세운다
+
+### 패턴은 속인다
+
+> "**Randomness is not regularity.** If one insists on finding 'homogeneous neighborhoods' in this random distribution, he can certainly do so."(p.156)
+>
+> "**Patterns, though, can be deceptive**, and it is useful to have some measures of segregation or concentration or clustering or sorting."(p.156)
+
+아무렇게나 뿌린 판에서도 동질적인 동네가 찾아진다. 찾겠다고 마음먹으면 그렇게 된다. 무작위는 균일하지 않으므로 뭉친 곳이 생기고 사람 눈은 거기서 패턴을 본다. 저자는 자기 그림을 보여주면서 동시에 그 그림을 믿지 말라고 쓰고 무작위 판(Fig.7)에 직접 경계선을 그려 "여기에도 분리된 패턴이 보인다"고 시범한다.
+
+그래서 눈 대신 수를 센다. "Though the patterns are impressionistic, the neighbor count is not."(p.156)
+
+### 숫자 하나로는 부족하다
+
+균형에 도달한 격자에서 평균적인 사람의 동네는 자기 색이 90%다(Fig.8, 자기 자신 포함). 그런데 90%가 큰 값인지는 이 수 자체로 알 수 없다. 크다고 느껴진다면 무언가와 비교하고 있다는 뜻이고 그 비교 대상을 밝히지 않으면 90%는 뜻이 없다([기준선](../glossary.qmd#baseline)).
+
+저자가 같은 기준으로 나란히 놓은 두 값은 이렇다(p.158).
+
+| | 영 | 별 |
+|---|---|---|
+| 무작위 배치 (Fig.7) | 53% | 46% |
+| 균형 도달 (Fig.9) | 83% (5/6) | 80% (4/5) |
+
+같은 격자, 같은 138명, 같은 색 비율이다. 다른 것은 규칙이 작동했는지뿐이다. 현실 도시의 데이터는 한 줄도 쓰이지 않는다. 비교 대상이 바깥 세계가 아니라 같은 모델의 다른 버전이기 때문이다.
+
+이 대조가 성립하는 이유가 중요하다. 이 모델에서 규칙이 작동하지 않으면 아무 일도 일어나지 않는다. 아무도 움직이지 않으니 53%가 그대로 유지되고 시간이 흘러도 마찬가지다. 그래서 무작위 배치가 "규칙이 없었다면 어땠을까"의 값이 된다.
+
+그리고 그 값은 이미 만족 상태다.
+
+> "On the average, both colors were virtually at their minimum demands (as they were bound to be with equal numbers in total)."(p.158)
+
+무작위 판에서 평균적인 사람은 이미 최소 요구를 채우고 있다. 반반으로 뿌렸으니 그렇게 된다. 53%는 규칙 없이도 얻는 몫이고 규칙이 실제로 한 일은 53에서 83으로 가는 30%p다. 창발의 크기는 83이라는 값이 아니라 이 차이다.
+
+## 한계 · 비판
+
+저자가 인정한 것부터.
+
+> "My samples have been too small, so far, to allow serious generalizations, so I shall formulate hypotheses suggested by what I have done. Quantitative measures, of course, refer exclusively to an artificial checkerboard and are unlikely to have any quantitative analogue in the living world."(p.158)
+
+표본이 너무 작아 일반화할 수 없고 수치는 인공 체커보드에만 해당하며 현실 세계에 대응물이 없을 것이라고 저자가 직접 쓴다. 결과는 전부 손과 눈으로 얻었고 이동 순서의 엄격한 규칙은 지키지 않았다(p.155). 모델은 소득·가족 규모·공간 비용처럼 밀도에 강하게 작용할 요인을 전혀 반영하지 않는다(p.164).
+
+우리가 짚은 것은 두 가지다.
+
+첫째, 인용 4,737회와 저자의 노벨 경제학상(2005, Robert Aumann과 공동 수상)은 이 논문의 수치를 보증하지 않는다. 수상 사유는 게임 이론을 통한 갈등과 협력 연구이며 이 논문이 아니다. 이 논문에서 가져올 것은 값이 아니라 값들 사이의 관계다. 저자도 같은 문단에서 비교(*comparisons*)는 현실로 확장될 수 있을지 모른다고 쓴다.
+
+둘째, 용어 귀속에 주의가 필요하다. Schelling은 emergence라는 명사를 이 논문에서 쓰지 않는다. 일상 동사 emerge가 네 곳에 나올 뿐이다(p.143, 149, 156). "Schelling이 창발을 정의했다"는 서술은 부정확하다. tipping도 그가 만든 용어가 아니다. 인용부호를 붙여 도입하고 Morton Grodzins(1957)의 논의를 인용한다(p.181).
+
+## 이 논문으로 Generative Agents를 다시 보면
+
+GA가 창발의 근거로 보고한 값은 이렇다(§7.1.2).
+
+- Sam의 시장 출마를 아는 에이전트: 1명(4%) → 8명(32%)
+- Isabella의 파티를 아는 에이전트: 1명(4%) → 13명(52%)
+- 관계망 밀도: 0.167 → 0.74
+
+두 값이 나란히 있으므로 비교 대상이 있는 것처럼 보인다. 그러나 0.167은 시작 시각의 값이고 Schelling의 53%와 성질이 다르다.
+
+Schelling 모델에서 규칙을 끄면 아무 일도 일어나지 않는다. GA에서 기억·성찰·계획을 빼도 에이전트는 여전히 돌아다니고 서로 말을 건다. 이틀이 지나면 아키텍처 없이도 관계는 생기고 정보는 어느 정도 퍼진다. 그러므로 0.167과 0.74의 비교에는 "이틀이 흘렀다"의 효과와 "GA 아키텍처가 있다"의 효과가 섞여 있고 분리되지 않는다.
+
+GA가 재지 않은 값은 같은 25명, 같은 Smallville, 같은 이틀에 기억·성찰·계획만 제거한 판의 밀도다. 그 값이 0.6이면 0.74는 아무것도 말하지 않고 0.2면 GA의 주장이 선다.
+
+GA는 §7.1을 스스로 "descriptive measurements"(서술적 측정)라고 부른다. 세었을 뿐 비교하지 않았다.
+
+GA가 이 절차를 모르는 것은 아니다. believability(사람이 보기에 그럴듯한 정도)는 기억·성찰·계획을 하나씩 제거하는 5조건 [절제](../glossary.qmd#ablation)로 측정했다. 같은 절차를 창발 쪽에는 적용하지 않았다.
+
+::: {.callout-important title="논문이 한 말 vs 우리 해석"}
+GA가 인용한 emergent narrative(Aylett 1999)를 보면 GA의 emergent는 복잡계 용어가 아니라 게임·서사 쪽 용례일 수 있다. 그렇다면 복잡계 기준으로 GA를 재는 것 자체가 범주 오류가 된다. 같은 단어 아래 서로 다른 두 개념이 있을 가능성은 열어둔다. 이 판단은 [GA 리뷰](2304.03442-generative-agents.qmd)의 (a) 판정 재검토와 같이 본다.
+:::

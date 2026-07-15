@@ -17,6 +17,7 @@ listing:
 
 핵심 논문을 한 편씩 해부한다. 요약이 아니라 판정과 직접 본 문제점을 남긴다.
 
+- [Schelling 1971](paper-reviews/schelling-1971-segregation.qmd) — 창발의 원전. 규칙 한 줄에서 아무도 요구하지 않은 분리가 나온다
 - [Generative Agents](paper-reviews/2304.03442-generative-agents.qmd) — 분야 시조. 아키텍처 4부품과 통제 평가 해부
 - [Park 2024 (self-report)](paper-reviews/2411.10109-self-report-agents.qmd) — 실제 개인 1,052명 시뮬레이션과 측정틀
 - [Hullman et al.](paper-reviews/2602.15785-validating-llm-simulations.qmd) — LLM 시뮬레이션은 언제 증거가 되나
