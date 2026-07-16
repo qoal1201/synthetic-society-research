@@ -25,7 +25,7 @@ listing:
 
 ## 실험
 
-논문 기술을 직접 작게 만들어 재본 기록, 최신순. → [트랙 소개](experiments/index.qmd)
+논문 기술을 직접 작게 만들어 재본 기록, 최신순.
 
 ::: {#experiments}
 :::
