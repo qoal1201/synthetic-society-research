@@ -21,7 +21,7 @@ website:
     left:
       - text: "실험"
         href: experiments/index.qmd
-      - text: "논문 리뷰"
+      - text: "논문"
         href: paper-reviews/index.qmd
       - text: "ML 기초"
         href: foundations/index.qmd
