@@ -1,0 +1,140 @@
+---
+title: "Anderson 1972 — More Is Different"
+date: "2026-07-16"
+description: "기초 법칙을 다 알아도 위층을 지어 올릴 수 없다는 논증. 창발의 물리 쪽 원전."
+categories: [review]
+---
+
+> P. W. Anderson, "More Is Different: Broken symmetry and the nature of the hierarchical structure of science", *Science* 1972-08-04, Vol. 177, No. 4047, pp. 393–396 (DOI [10.1126/science.177.4047.393](https://doi.org/10.1126/science.177.4047.393)) · 인용 3,747회(Semantic Scholar, 2026-07-16 조회)
+> 상태: 전문 정독. 물리 사례의 내부 계산은 검증하지 않았다.
+> 방법: 실험도 데이터도 없는 4쪽 논증. 1967년 강연의 확장판이라고 저자가 밝힌다(p.393).
+
+## 왜 이 논문인가
+
+[창발](../glossary.qmd#emergence)의 원전이 둘인데 하나는 사회과학 쪽([Schelling 1971](schelling-1971-segregation.qmd)), 다른 하나가 이것이다. 발표 시점이 1년 차이다.
+
+두 논문의 공통점이 하나 더 있다. **둘 다 "emergence"라는 단어를 쓰지 않는다.** 창발 원전으로 불리는 두 편이 정작 그 단어를 안 쓴다. Anderson이 쓰는 말은 "entirely new properties appear"(완전히 새로운 성질이 나타난다, p.393), "broken symmetry"(대칭 깨짐), 그리고 제목의 "More Is Different"다.
+
+## 무엇을 했나 — 한 단락
+
+환원주의(reductionism)는 받아들이고 구성주의(constructionism)는 거부한다. 만물이 같은 기초 법칙의 지배를 받는다는 데는 이견이 없다고 먼저 못박은 뒤(p.393), 거기서 "그 법칙에서 출발해 우주를 재구성할 수 있다"가 따라 나오지 않는다고 논증한다. 근거는 대칭 깨짐이다. 규모가 커지면 법칙은 그대로인데 결과가 질적으로 달라지는 지점이 온다는 것을 암모니아에서 설탕, 결정, 초전도체로 규모를 키우며 보인다(pp.394–395). 마지막으로 이 구조를 화학·생물학·심리학·사회과학으로 이어지는 과학의 위계에 유비로 확장한다(pp.395–396).
+
+## 조망 — 환원은 되는데 재구성은 안 된다
+
+논문의 심장이 첫 쪽에 있다.
+
+> "**The ability to reduce everything to simple fundamental laws does not imply the ability to start from those laws and reconstruct the universe.**"(p.393)
+
+방향을 갈라야 이 문장이 읽힌다.
+
+- **위에서 아래로(환원)**: 현상을 보고 기초 법칙으로 압축한다.
+- **아래에서 위로(재구성)**: 기초 법칙을 쥐고 현상을 유도한다.
+
+같은 두 층 사이인데 한 방향만 뚫린다. 앞엣것이 된다고 뒤엣것도 된다고 믿는 것을 Anderson은 구성주의의 오류라 부른다.
+
+[Schelling의 판](schelling-1971-segregation.qmd)이 이 논증의 실례다. 그 판의 규칙은 네 줄이고 숨긴 것이 없다. 70명이 일렬로 서고, 이웃은 양옆 4명씩이고, 이웃 8명 중 4명이 자기 색이면 만족하고, 불만이면 조건을 채우는 가장 가까운 자리로 간다. 이 네 줄에서 결과가 81.5%라는 것을 유도할 수 있는 사람은 없다. 굴려봐야 안다.
+
+Anderson은 같은 도전을 독자에게 직접 건다.
+
+> "**I would challenge you** to start from the fundamental laws of quantum mechanics and **predict the ammonia inversion** and its easily observable properties without going through the stage of using the unsymmetrical pyramidal structure, even though no new laws are needed"(p.394)
+
+새 법칙이 필요한 것도 아닌데 못 할 것이라는 말이다.
+
+## 부품 해부
+
+### 반박 대상은 "기초는 필요 없다"가 아니다
+
+이 논문을 기초 무용론으로 읽기 쉽지만 저자가 본문에서 직접 반박하는 독해다. 그가 겨냥한 문장은 이것이다.
+
+> "if everything obeys the same fundamental laws, then **the only scientists who are studying anything really fundamental are those who are working on those laws**... This point of view, **which it is the main purpose of this article to oppose**"(p.393)
+
+반박 대상은 "기초 법칙을 하는 사람만 근본적인 일을 한다"이지 "기초 법칙은 쓸모없다"가 아니다. 방향이 반대다. Anderson의 주장은 대칭이다. 기초 법칙 연구가 근본적이라는 것을 인정하고 위층 연구도 그만큼 근본적이라고 덧붙인다.
+
+저자 자신이 든 사례가 이 구분을 못 박는다.
+
+> "In the case of superconductivity, **30 years elapsed** between the time when physicists were **in possession of every fundamental law necessary for explaining it** and the time when it was actually done."(p.395)
+
+초전도를 설명하는 데 필요한 모든 기초 법칙을 이미 손에 쥔 시점과 실제로 설명해낸 시점 사이가 30년이다. 기초 법칙은 필요했다. 없었으면 시작도 못 했다. 충분하지 않았을 뿐이다.
+
+반대 방향의 사례도 그가 든다.
+
+> "analysis, on the other hand, may be not only possible but **fruitful** in all kinds of ways: Without an understanding of the broken symmetry in superconductivity, for instance, **Josephson would probably not have discovered his effect**"(p.396)
+
+아래층을 파고들었기 때문에 위층에서 새로운 것을 발견했다는 말이다. 기초 공부가 쓸모없다는 독해와 정반대 자리에 있다.
+
+### 위계는 있는데 응용은 아니다
+
+Anderson이 반박용으로 표를 하나 그린다. 왼쪽 학문의 기본 단위가 오른쪽 학문의 법칙을 따른다는 배열이다(p.393).
+
+| X | Y |
+|---|---|
+| 고체·다체물리 | 소립자물리 |
+| 화학 | 다체물리 |
+| 분자생물학 | 화학 |
+| 세포생물학 | 분자생물학 |
+| … | … |
+| 심리학 | 생리학 |
+| 사회과학 | 심리학 |
+
+표를 세워놓고 바로 뒤집는다.
+
+> "But this hierarchy does not imply that science X is '**just applied Y**.' At each stage **entirely new laws, concepts, and generalizations are necessary**, requiring inspiration and creativity to just as great a degree as in the previous one. **Psychology is not applied biology, nor is biology applied chemistry.**"(p.393)
+
+위계가 있다는 것과 위층이 아래층의 응용이라는 것은 다른 말이다. 단계마다 새 법칙과 개념이 필요하고 그것을 만드는 데 아래층 못지않은 창의가 든다.
+
+### 대칭 깨짐 — 양이 질로 넘어가는 자리
+
+대칭은 바꿔도 같으면 대칭이다. 물리 법칙은 좌우를 구별하지 않으므로 그 법칙을 따르는 물체도 좌우 대칭이어야 할 것 같다. 그런데 큰 물체는 그렇지 않다.
+
+Anderson이 규모 사다리로 이것을 보인다. 전부 뿔 모양 분자가 위아래로 뒤집히느냐를 본다.
+
+| 물질 | 뒤집힘 |
+|---|---|
+| 암모니아(NH₃, 4원자) | 초당 약 3×10¹⁰회 뒤집힘(p.394) |
+| PH₃(암모니아의 2배 무게) | 1/10 속도로 뒤집힘 |
+| PF₃(더 무거움) | 잴 수 있는 속도로는 뒤집히지 않음 |
+| 설탕(약 40원자) | 뒤집히지 않음 |
+
+암모니아는 너무 빨리 왕복해서 "위를 향한 상태"라는 것이 없다. 평균 내면 위도 아래도 아니다. 대칭이 유지된다. 설탕은 뒤집히지 않고 한 방향으로 굳는다. 대칭이 깨진다.
+
+> "the new symmetry — now called **broken symmetry because the original symmetry is no longer evident**"(p.395)
+
+이 사다리에서 변한 것은 무게 하나뿐이다. 암모니아도 설탕도 같은 양자역학을 따른다. 설탕에만 적용되는 특별한 법칙이 새로 생기는 것이 아니다. 양이 바뀌었는데 질이 바뀌었고 그 지점의 이론을 만드는 것이 이 논문의 목표다.
+
+> "a general theory of just how this shift **from quantitative to qualitative differentiation** takes place. This formulation, called the theory of '**broken symmetry**'"(p.393)
+
+제목이 여기서 나온다. 많아지면 양만 느는 것이 아니라 다른 것이 된다.
+
+한 가지 단서가 붙는다. 열평형 화학반응으로 설탕을 합성하면 좌우가 평균적으로 같다(p.394). 한 방향으로만 꼬인 설탕을 실제로 만들려면 생명이 필요하다.
+
+### 일방통행 — 종합은 막고 분석은 연다
+
+계와 부분의 관계에 대한 Anderson의 최종 명제다(p.396). 부분에서 전체를 종합하는 것은 거의 불가능하지만 전체를 분석하는 것은 가능할 뿐 아니라 유익하다. 앞서의 Josephson 사례가 뒤엣것의 예다.
+
+층위를 올라가면 이 간극이 벌어진다.
+
+> "Surely there are **more levels of organization between human ethology and DNA** than there are between DNA and quantum electrodynamics, and **each level can require a whole new conceptual structure**."(p.396)
+
+인간 행동과 DNA 사이의 층이 DNA와 양자전기역학 사이보다 많다. 층마다 새로운 개념 구조가 필요할 수 있다.
+
+## 한계 · 비판
+
+저자가 인정한 것부터. 이 글은 "불완전한 설명"이고 뒷부분은 유비에 대한 사변적 논평이라고 스스로 밝힌다(p.393). 물리에서 사회과학으로 넘어가는 대목은 논증이 아니라 유비다. 규모 변화가 다른 기초 법칙을 부른다는 뜻이 아니라는 것도 본문에서 미리 차단한다(p.394).
+
+우리가 짚은 것은 셋이다.
+
+첫째, **"지금 유도하지 못한다"는 창발의 증거가 아니다.** 저자 자신의 사례가 반례다. 물리학자들은 필요한 법칙을 다 갖고도 초전도를 30년 못 풀었지만 결국 풀었다. 그 30년 동안 초전도가 창발이었다가 설명된 뒤 아니게 된 것이 아니다. 우리가 아직 못 푸는 것과 원리적으로 못 푸는 것은 다르고 이 논문의 사례들은 앞엣것이 뒤엣것으로 오해받기 쉽다는 것을 함께 보여준다.
+
+둘째, **Anderson의 도약과 Schelling의 도약은 종류가 다르다.** Anderson의 사다리에서 대칭을 깬 것은 규모다. 무게를 늘렸더니 깨졌다. Schelling의 판에서 분리를 만든 것은 규모가 아니다. 70명을 700명으로 늘려서 나온 결과가 아니라 서로 반응하는 구조에서 나온 결과다. 둘 다 아래층에서 위층을 유도할 수 없다고 말하지만 이유가 다르다. 두 논문을 창발이라는 한 단어로 묶을 때 이 차이가 지워진다.
+
+셋째, 용어 귀속이다. Anderson은 emergence를 쓰지 않는다. "Anderson이 창발을 정의했다"는 서술은 부정확하다.
+
+## 우리 측정에 주는 것
+
+Anderson의 기준을 그대로 옮기면 "창발했다"는 주장에 필요한 것은 **새 개념의 필요성**이다. 심리학이 응용 생물학이 아닌 이유는 심리학이 크기 때문이 아니라 생물학 언어로 심리학을 말할 수 없기 때문이다. [Generative Agents](2304.03442-generative-agents.qmd)에 옮기면, 그 마을에서 벌어진 일을 LLM의 언어로 설명할 수 없고 새 개념이 필요하다는 것을 보여야 한다.
+
+그런데 위의 첫 번째 비판이 이 기준의 발을 건다. "LLM 지식으로 마을을 유도할 수 없다"는 거의 자명하게 참이다. LLM의 출력을 유도할 수 있는 사람은 지금 아무도 없다. 자명하게 참인 것은 아무것도 가르지 못한다. 초전도체가 30년 뒤에 설명된 것처럼 그 유도 불가능성이 우리의 현재 무능일 가능성이 열려 있고 Anderson은 그 둘을 가르는 시험을 주지 않는다.
+
+규모를 키우는 쪽은 어떤가. 이 방향의 연구는 이미 여럿이고 우리 정독 기록에 헤드라인과 실체의 층위차가 남아 있다. OASIS의 100만은 등록 수이고, AgentSociety의 1만은 성능 평가 구간에서만 나오며, GenSim의 10만은 지원 한도다. 규모를 키웠더니 무엇이 질적으로 달라졌는지를 같은 자로 보인 연구를 아직 찾지 못했다.
+
+Anderson에게서 가져갈 수 있는 것은 판정 도구가 아니라 요구 사항이다. 창발을 주장하려면 아래층 언어로 설명이 안 된다는 것을 보여야 하고 그 "안 된다"가 원리인지 현재 무능인지를 갈라야 한다. 두 번째 요구를 통과한 사례를 이 분야에서 아직 보지 못했다.
