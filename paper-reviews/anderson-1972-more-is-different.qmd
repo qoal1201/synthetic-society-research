@@ -24,6 +24,7 @@ categories: [논문]
 논문의 심장이 첫 쪽에 있다.
 
 > "**The ability to reduce everything to simple fundamental laws does not imply the ability to start from those laws and reconstruct the universe.**"(p.393)
+> (모든 것을 단순한 기초 법칙으로 환원할 수 있다는 것이, 그 법칙에서 출발해 우주를 재구성할 수 있다는 뜻은 아니다.)
 
 방향을 갈라야 이 문장이 읽힌다.
 
@@ -37,6 +38,7 @@ categories: [논문]
 Anderson은 같은 도전을 독자에게 직접 건다.
 
 > "**I would challenge you** to start from the fundamental laws of quantum mechanics and **predict the ammonia inversion** and its easily observable properties without going through the stage of using the unsymmetrical pyramidal structure, even though no new laws are needed"(p.394)
+> (새 법칙이 하나도 필요 없는데도, 비대칭 피라미드 구조를 쓰는 단계를 거치지 않고 양자역학의 기초 법칙에서 출발해 암모니아 반전과 그 쉽게 관측되는 성질들을 예측해 보라고 나는 당신에게 도전하겠다.)
 
 새 법칙이 필요한 것도 아닌데 못 할 것이라는 말이다.
 
@@ -47,18 +49,21 @@ Anderson은 같은 도전을 독자에게 직접 건다.
 이 논문을 기초 무용론으로 읽기 쉽지만 저자가 본문에서 직접 반박하는 독해다. 그가 겨냥한 문장은 이것이다.
 
 > "if everything obeys the same fundamental laws, then **the only scientists who are studying anything really fundamental are those who are working on those laws**... This point of view, **which it is the main purpose of this article to oppose**"(p.393)
+> (만물이 같은 기초 법칙을 따른다면, 정말 근본적인 것을 연구하는 과학자는 그 법칙을 다루는 사람들뿐이라는 얘기가 된다… 이 관점에 반대하는 것이 이 글의 주된 목적이다.)
 
 반박 대상은 "기초 법칙을 하는 사람만 근본적인 일을 한다"이지 "기초 법칙은 쓸모없다"가 아니다. 방향이 반대다. Anderson의 주장은 대칭이다. 기초 법칙 연구가 근본적이라는 것을 인정하고 위층 연구도 그만큼 근본적이라고 덧붙인다.
 
 저자 자신이 든 사례가 이 구분을 못 박는다.
 
 > "In the case of superconductivity, **30 years elapsed** between the time when physicists were **in possession of every fundamental law necessary for explaining it** and the time when it was actually done."(p.395)
+> (초전도의 경우, 물리학자들이 그것을 설명하는 데 필요한 모든 기초 법칙을 손에 쥔 시점과 실제로 설명해낸 시점 사이에 30년이 흘렀다.)
 
 초전도를 설명하는 데 필요한 모든 기초 법칙을 이미 손에 쥔 시점과 실제로 설명해낸 시점 사이가 30년이다. 기초 법칙은 필요했다. 없었으면 시작도 못 했다. 충분하지 않았을 뿐이다.
 
 반대 방향의 사례도 그가 든다.
 
 > "analysis, on the other hand, may be not only possible but **fruitful** in all kinds of ways: Without an understanding of the broken symmetry in superconductivity, for instance, **Josephson would probably not have discovered his effect**"(p.396)
+> (반면 분석은 가능할 뿐 아니라 여러모로 유익할 수 있다. 예컨대 초전도의 대칭 깨짐을 이해하지 못했다면 Josephson은 아마 자신의 효과를 발견하지 못했을 것이다.)
 
 아래층을 파고들었기 때문에 위층에서 새로운 것을 발견했다는 말이다. 기초 공부가 쓸모없다는 독해와 정반대 자리에 있다.
 
@@ -79,6 +84,7 @@ Anderson이 반박용으로 표를 하나 그린다. 왼쪽 학문의 기본 단
 표를 세워놓고 바로 뒤집는다.
 
 > "But this hierarchy does not imply that science X is '**just applied Y**.' At each stage **entirely new laws, concepts, and generalizations are necessary**, requiring inspiration and creativity to just as great a degree as in the previous one. **Psychology is not applied biology, nor is biology applied chemistry.**"(p.393)
+> (그러나 이 위계가 과학 X는 '응용 Y일 뿐'이라는 뜻은 아니다. 단계마다 완전히 새로운 법칙·개념·일반화가 필요하고, 거기엔 이전 단계 못지않은 영감과 창의가 든다. 심리학은 응용 생물학이 아니고, 생물학은 응용 화학이 아니다.)
 
 위계가 있다는 것과 위층이 아래층의 응용이라는 것은 다른 말이다. 단계마다 새 법칙과 개념이 필요하고 그것을 만드는 데 아래층 못지않은 창의가 든다.
 
@@ -98,10 +104,12 @@ Anderson이 규모 사다리로 이것을 보인다. 전부 뿔 모양 분자가
 암모니아는 너무 빨리 왕복해서 "위를 향한 상태"라는 것이 없다. 평균 내면 위도 아래도 아니다. 대칭이 유지된다. 설탕은 뒤집히지 않고 한 방향으로 굳는다. 대칭이 깨진다.
 
 > "the new symmetry — now called **broken symmetry because the original symmetry is no longer evident**"(p.395)
+> (이 새로운 대칭 — 원래의 대칭이 더는 드러나지 않으므로 이제 '깨진 대칭'이라 불린다)
 
 이 사다리에서 변한 것은 무게 하나뿐이다. 암모니아도 설탕도 같은 양자역학을 따른다. 설탕에만 적용되는 특별한 법칙이 새로 생기는 것이 아니다. 양이 바뀌었는데 질이 바뀌었고 그 지점의 이론을 만드는 것이 이 논문의 목표다.
 
 > "a general theory of just how this shift **from quantitative to qualitative differentiation** takes place. This formulation, called the theory of '**broken symmetry**'"(p.393)
+> (양적 차이가 질적 차이로 넘어가는 이 전환이 정확히 어떻게 일어나는지에 대한 일반 이론. '대칭 깨짐' 이론이라 불리는 이 정식화는)
 
 제목이 여기서 나온다. 많아지면 양만 느는 것이 아니라 다른 것이 된다.
 
@@ -114,6 +122,7 @@ Anderson이 규모 사다리로 이것을 보인다. 전부 뿔 모양 분자가
 층위를 올라가면 이 간극이 벌어진다.
 
 > "Surely there are **more levels of organization between human ethology and DNA** than there are between DNA and quantum electrodynamics, and **each level can require a whole new conceptual structure**."(p.396)
+> (인간 행동학과 DNA 사이에는 DNA와 양자전기역학 사이보다 분명 더 많은 조직화 층위가 있고, 층위마다 완전히 새로운 개념 구조가 필요할 수 있다.)
 
 인간 행동과 DNA 사이의 층이 DNA와 양자전기역학 사이보다 많다. 층마다 새로운 개념 구조가 필요할 수 있다.
 

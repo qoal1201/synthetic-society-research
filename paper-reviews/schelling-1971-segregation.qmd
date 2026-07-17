@@ -32,6 +32,7 @@ categories: [논문]
 초기 불만은 26명이고 2라운드에 전원이 만족한다. 결과는 군집 6개(8·15·10·15·16·6명, 평균 12명)다. 이웃 540쌍 중 440쌍이 같은 색으로, **81.5%**다. 자기 자신을 아홉 번째 구성원으로 세면 평균 5:1이 넘는 동네에 살게 된다.
 
 > "This resulted from individuals' *seeking* a ratio not less than five to four."(p.150)
+> (이것은 각자가 5:4 이상의 비율을 추구한 결과다.)
 
 여기가 흔히 미끄러지는 자리다. 정지 조건이 "8명 중 4명"이므로 전원이 멈춘 상태라면 전원이 최소 50%를 만족한다. 이것은 추론이 아니라 정의상 참이다. 그래서 결과도 50% 근처일 것 같지만 하한 50%와 평균 50%는 다른 값이다. 실제 평균은 81.5%다.
 
@@ -44,16 +45,19 @@ categories: [논문]
 이동은 양방향으로 작용한다. 만족하던 사람이 불만이 되기도 하고 불만이던 사람이 만족하기도 한다.
 
 > "Some who were content will become discontent, because like members move out of their neighborhoods or opposite members move in. And some who were discontent become content, as opposite neighbors move away or like neighbors move close."(p.150)
+> (만족하던 이들 일부는 불만이 된다. 같은 색 이웃이 동네를 떠나거나 반대색이 들어오기 때문이다. 그리고 불만이던 이들 일부는 만족하게 된다. 반대색 이웃이 떠나거나 같은 색 이웃이 가까이 오기 때문이다.)
 
 오르는 일과 내리는 일이 둘 다 일어나므로 서로 상쇄될 것 같지만 그렇지 않다. 두 방향의 처지가 다르기 때문이다. 비율이 오른 사람은 만족하므로 그 자리에 남는다. 내려간 사람은 불만이 되어 떠난다. 오른 것은 판에 쌓이고 내린 것은 판에서 빠져나간다. 한 방향으로만 도는 톱니가 되어 누적된다.
 
 저자는 이 비대칭을 한 문장으로 적어뒀다.
 
 > "each person's search for others of like color raises the likelihood that people of like color will *stay* in the place he moves to and those of opposite color will *leave* it."(p.151)
+> (각자가 같은 색을 찾아 움직이는 일은, 그가 이사 간 곳에 같은 색 사람들이 머무를 가능성과 반대색 사람들이 떠날 가능성을 함께 높인다.)
 
 여기에 이동 하나가 여러 사람의 비율을 동시에 올리는 효과가 겹친다.
 
 > "each individual that moves not only *acquires* more neighbors of like color, but *becomes* a like neighbor to more neighbors the more he acquires."(p.159)
+> (이사하는 각 개인은 같은 색 이웃을 더 얻을 뿐 아니라, 많이 얻을수록 더 많은 이웃에게 같은 색 이웃이 되어준다.)
 
 이사한 사람은 자기 색 이웃을 얻는 동시에 그 동네 사람들에게 자기 색 이웃이 되어준다. 개인은 자기 문제만 풀었는데 남의 비율도 함께 오른다.
 
@@ -64,6 +68,7 @@ categories: [논문]
 저자가 두 번째 모델에서 "관용이 커진다"는 말을 정의하는 방식이 이 점을 드러낸다.
 
 > "at least, not if 'greater tolerance' means that within a given population some members are **statistically replaced** by others more tolerant"(p.174)
+> (적어도 '관용이 커진다'가, 주어진 집단 안에서 일부 구성원이 더 관대한 이들로 통계적으로 교체된다는 뜻이라면 그렇다.)
 
 집단이 관대해진다는 것은 구성원 일부가 더 관대한 사람으로 교체된다는 뜻이다. 개인이 관대해진다는 뜻이 아니다.
 
@@ -76,6 +81,7 @@ categories: [논문]
 같은 난수표의 다른 열로 다시 돌린 판(Fig.3)이 이 구분을 보여준다. 72명에 초기 불만 30명이었고 1라운드에 정리됐다. 걸린 라운드 수도 인원도 다른데 "again we have six groups and the same resulting neighborhood statistics as in the first case"(p.151)로 끝났다. 군집이 6개인 것도 이웃 통계도 첫 판과 같다.
 
 > "The *particular* outcome will depend very much on the order in which discontented stars and zeros are moved, the *character* of the outcome not very much."(p.156)
+> (특정 결과는 불만인 별과 영을 움직이는 순서에 크게 좌우되지만, 결과의 성격은 그다지 좌우되지 않는다.)
 
 누가 어디 서는지, 몇 라운드가 걸리는지, 군집이 몇 개인지는 그 판의 운이다. 덩어리가 생기고 아무도 요구하지 않은 수준의 분리가 나온다는 것은 운이 아니다. 눈송이의 모양은 그날의 습도와 온도에 달렸지만 6각이라는 것은 그렇지 않은 것과 같다.
 
@@ -84,8 +90,10 @@ categories: [논문]
 ### 패턴은 속인다
 
 > "**Randomness is not regularity.** If one insists on finding 'homogeneous neighborhoods' in this random distribution, he can certainly do so."(p.156)
+> (무작위는 규칙성이 아니다. 이 무작위 분포에서 '동질적인 동네'를 찾아내겠다고 마음먹으면 얼마든지 찾을 수 있다.)
 >
 > "**Patterns, though, can be deceptive**, and it is useful to have some measures of segregation or concentration or clustering or sorting."(p.156)
+> (그러나 패턴은 속일 수 있으므로, 분리·집중·군집·분류를 재는 측정치를 갖는 것이 유용하다.)
 
 아무렇게나 뿌린 판에서도 동질적인 동네가 찾아진다. 찾겠다고 마음먹으면 그렇게 된다. 무작위는 균일하지 않으므로 뭉친 곳이 생기고 사람 눈은 거기서 패턴을 본다. 저자는 자기 그림을 보여주면서 동시에 그 그림을 믿지 말라고 쓰고 무작위 판(Fig.7)에 직접 경계선을 그려 "여기에도 분리된 패턴이 보인다"고 시범한다.
 
@@ -109,6 +117,7 @@ categories: [논문]
 그리고 그 값은 이미 만족 상태다.
 
 > "On the average, both colors were virtually at their minimum demands (as they were bound to be with equal numbers in total)."(p.158)
+> (평균적으로 두 색 모두 사실상 최소 요구 수준에 있었다. 전체 수가 같으니 그렇게 될 수밖에 없다.)
 
 무작위 판에서 평균적인 사람은 이미 최소 요구를 채우고 있다. 반반으로 뿌렸으니 그렇게 된다. 53%는 규칙 없이도 얻는 몫이고 규칙이 실제로 한 일은 53에서 83으로 가는 30%p다. 창발의 크기는 83이라는 값이 아니라 이 차이다.
 
@@ -117,6 +126,7 @@ categories: [논문]
 평균이 이미 최소 요구를 넘겼다면 판이 움직일 이유가 없어 보인다. 그런데 움직였다.
 
 > "there are **25 stars and 18 zeros** in Figure 7 whose neighbors are less than half of like color"(p.156)
+> (그림 7에는 이웃의 절반이 못 되게 같은 색인 별 25명과 영 18명이 있다.)
 
 43명이 불만이었다. 평균이 50%라는 것과 각자가 50%라는 것은 다른 말이다. 동전을 여덟 번 던지면 평균은 4:4로 수렴하지만 개별 시행에서는 6:2도 2:6도 나온다. 무작위로 뿌렸다는 것은 각자의 이웃 여덟 칸이 각각 그런 시행이었다는 뜻이다. 자기 색이 둘뿐인 자리에 떨어진 사람이 있었고 그 사람이 움직이면서 판이 돌기 시작했다.
 
@@ -133,6 +143,7 @@ categories: [논문]
 이 판에는 비율이 하나뿐이다. 백인이 보는 33%와 흑인이 보는 67%는 같은 숫자의 앞뒤다. 그래서 한쪽을 편하게 하는 모든 움직임이 반대쪽을 불편하게 한다. 백인이 하나 들어오면 백인에게는 좋아지고 흑인에게는 나빠진다. 좋아진 쪽은 더 들어오고 나빠진 쪽은 나가기 시작한다. 두 방향이 서로를 가속한다.
 
 > "**There are only two stable equilibria.** One consists of all the blacks and no whites, the other all the whites and no blacks. Which of the two will occur depends on how the process starts and, perhaps, the relative speeds of white and black movement."(p.170)
+> (안정 균형은 둘뿐이다. 하나는 흑인 전원에 백인 없음, 다른 하나는 백인 전원에 흑인 없음이다. 둘 중 무엇이 실현되는가는 과정이 어떻게 시작되는지, 그리고 아마도 백인과 흑인의 상대적 이동 속도에 달려 있다.)
 
 안정된 상태가 둘뿐이다. 전부 흑인이거나 전부 백인이거나. 어느 쪽이 되는지는 시작할 때 누가 많았는지와 어느 쪽이 빨리 움직였는지가 정한다. 앞 모델에서 본 구분이 여기서도 그대로다. 어느 색이 남는지는 그 판의 운이고 한 색만 남는다는 것은 운이 아니다.
 
@@ -143,6 +154,7 @@ categories: [논문]
 그 상태는 유지되지 않는다.
 
 > "Within the overlapping portion of the two curves, **the numbers of blacks and whites present will both be increasing**."(p.170)
+> (두 곡선이 겹치는 구간 안에서는 흑인과 백인의 수가 둘 다 늘고 있을 것이다.)
 
 겹침 영역에서 흑인 수도 백인 수도 늘어난다. 모두가 만족하는 동네는 밖에 있는 사람에게도 살 만한 동네이기 때문이다. 사람이 들어오고, 어느 한 색이 수적으로 앞서고, 반대색 소수가 연쇄로 빠져나간다. 만족 상태라는 것 자체가 그 상태를 무너뜨리는 원인이 된다.
 
@@ -153,24 +165,28 @@ categories: [논문]
 여기까지 이 모델은 다른 색을 못 참아서 자기 색끼리 살러 나가는 사람들로 굴러왔다. 저자는 원래 그렇게 만들었다고 인정한 뒤 뒤집는다.
 
 > "**Surprisingly, the results generated by this analysis do not depend upon each color's having a preference for living separately. They do not even depend on a preference for being in the majority!**"(p.180)
+> (놀랍게도 이 분석이 낳은 결과들은 각 색이 따로 살기를 선호하는지에 의존하지 않는다. 다수가 되고 싶다는 선호에조차 의존하지 않는다!)
 
 같은 곡선을 이렇게 다시 읽어도 된다. 이 사람은 혼합된 동네를 원한다. 다만 자기가 극단적 소수가 되는 것은 못 견딘다. 그 선을 넘으면 나간다.
 
 두 사람은 속마음이 정반대다. 한쪽은 다른 색이 많은 것이 싫어서 나가고 다른 쪽은 자기가 소수인 것이 무서워서 나간다. 그런데 행동이 같다. 둘 다 "상대색 비율이 X를 넘으면 나간다"는 선 하나로 표현된다. 모델은 이유를 보지 않고 행동만 보므로 두 곡선이 같은 모양이 되고 같은 결과를 낳는다.
 
 > "the analysis was already finished and **the same model represented both hypotheses**. More than that, **the same results flowed from the two alternative hypotheses**."(p.180)
+> (분석은 이미 끝나 있었고 같은 모델이 두 가설을 모두 대표했다. 그뿐 아니라 두 대안 가설에서 같은 결과가 흘러나왔다.)
 
 유일한 비대칭은 하한이 없다는 것뿐이다(p.180). 상대색이 너무 적어서 떠나는 사람은 이 모델에 없다.
 
 그래서 한 색만 남은 동네 사진을 놓고 저 사람들이 분리를 원했다고 읽을 수 없다. 혼합을 원했던 사람들도 같은 사진을 만든다. 이것이 저자가 초록에서 미리 적어둔 문장의 모델 내부 증명이다.
 
 > "Inferences about individual motives can usually not be drawn from aggregate patterns."(p.143)
+> (개인의 동기에 대한 추론은 대개 집계 패턴에서 끌어낼 수 없다.)
 
 ## 두 모델은 층위가 다르다
 
 두 모델은 경쟁하지 않는다. 저자는 티핑 절에서 둘의 관계를 한 번 적어둔다.
 
 > "The '**proximity model**' of stars and zeros may apply **in the small**, and the '**bounded area model**' **in the large**, as next neighbors react to immediate proximity while more distant ones react to neighborhood proportions."(p.185)
+> (별과 영의 '근접 모델'은 작은 규모에, '경계 지정 모델'은 큰 규모에 적용될 수 있다. 바로 옆 이웃은 직접적 근접에 반응하고 더 먼 이들은 동네의 비율에 반응하기 때문이다.)
 
 옆집은 옆집에 반응하고 멀리 있는 사람은 동네 비율에 반응한다. 같은 동네에서 두 모델이 동시에 돌 수 있다.
 
@@ -183,6 +199,7 @@ categories: [논문]
 저자가 인정한 것부터.
 
 > "My samples have been too small, so far, to allow serious generalizations, so I shall formulate hypotheses suggested by what I have done. Quantitative measures, of course, refer exclusively to an artificial checkerboard and are unlikely to have any quantitative analogue in the living world."(p.158)
+> (내 표본은 지금까지 진지한 일반화를 허용하기에는 너무 작았으므로, 내가 한 것이 시사하는 가설들을 정식화하겠다. 물론 정량 측정치들은 오로지 인공 체커보드에 관한 것이며, 살아 있는 세계에 어떤 정량적 대응물을 가질 것 같지 않다.)
 
 표본이 너무 작아 일반화할 수 없고 수치는 인공 체커보드에만 해당하며 현실 세계에 대응물이 없을 것이라고 저자가 직접 쓴다. 결과는 전부 손과 눈으로 얻었고 이동 순서의 엄격한 규칙은 지키지 않았다(p.155). 모델은 소득·가족 규모·공간 비용처럼 밀도에 강하게 작용할 요인을 전혀 반영하지 않는다(p.164).
 
