@@ -4,13 +4,8 @@ listing:
   contents:
     - "*.qmd"
     - "!index.qmd"
-    - "!gap8-review.qmd"
   sort: "date desc"
   type: table
   fields: [date, title, description]
   date-format: "YYYY-MM-DD"
 ---
-
-읽은 논문의 핵심 주장·방법·한계와 직접 본 문제점.
-
-> **묶음 리뷰:** [질문에 가장 가까이 간 8편 — 정답 없는 열린 세계 개인 충실도 측정](gap8-review.qmd) — [분야 지도 §4](../field-map.qmd)가 식별한 가장 가까운 선행연구 8편을 측정 방법·데이터·한계별로 해부.

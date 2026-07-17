@@ -1,31 +1,32 @@
 ---
 title: "Synthetic Society Research"
 listing:
-  id: experiments
-  contents: "experiments/2*.qmd"
-  sort: "date desc"
-  type: default
-  fields: [date, title, description]
-  date-format: "YYYY-MM-DD"
+  - id: reviews
+    contents:
+      - "paper-reviews/*.qmd"
+      - "!paper-reviews/index.qmd"
+    sort: "date desc"
+    type: default
+    fields: [date, title, description]
+    date-format: "YYYY-MM-DD"
+  - id: experiments
+    contents: "experiments/2*.qmd"
+    sort: "date desc"
+    type: default
+    fields: [date, title, description]
+    date-format: "YYYY-MM-DD"
 ---
 
 인간과 AI가 섞여 상호작용하는 사회 — **합성사회**를 공부하고 기록한다. 쫓는 질문 하나: *정답이 없는 열린 세계에서, AI로 만든 개인이 "그 사람답게" 행동하는지를 어떻게 재나.*
 
-처음이면 **[분야 지도](field-map.qmd)**. 649편을 여섯 지역으로 나눠 조망하고 위 질문이 어디에 비어 있는지 짚는다.
+처음이면 [분야 지도](field-map.qmd) — 위 질문이 분야 어디에 비어 있는지부터.
 
 ## 논문
 
-핵심 논문을 한 편씩 해부한다. 요약이 아니라 판정과 직접 본 문제점을 남긴다.
-
-- [Schelling 1971](paper-reviews/schelling-1971-segregation.qmd) — 창발의 원전. 규칙 한 줄에서 아무도 요구하지 않은 분리가 나온다
-- [Generative Agents](paper-reviews/2304.03442-generative-agents.qmd) — 분야 시조. 아키텍처 4부품과 통제 평가 해부
-- [Park 2024 (self-report)](paper-reviews/2411.10109-self-report-agents.qmd) — 실제 개인 1,052명 시뮬레이션과 측정틀
-- [Hullman et al.](paper-reviews/2602.15785-validating-llm-simulations.qmd) — LLM 시뮬레이션은 언제 증거가 되나
-- [질문에 가장 가까이 간 8편](paper-reviews/gap8-review.qmd) — "정답 없는 개인 충실도 측정"에 가장 가까이 간 선행연구 8편 합본
+::: {#reviews}
+:::
 
 ## 실험
-
-논문 기술을 직접 작게 만들어 재본 기록, 최신순.
 
 ::: {#experiments}
 :::
