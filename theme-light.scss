@@ -4,6 +4,8 @@ $navbar-bg: #ffffff;
 $navbar-fg: #212529;
 // 본문 기본 글자 크기 15px → 17px (한국어 본문 가독)
 $font-size-root: 17px;
+// 링크: flatly 기본 민트색 대신 사이트 차트 강조색과 같은 청록 (styles 규칙: 청록 #0F87A8 = 이 연구 관련)
+$link-color: #0F87A8;
 
 /*-- scss:rules --*/
 .navbar {
