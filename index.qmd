@@ -1,37 +1,24 @@
 ---
 pagetitle: "합성사회 연구 노트"
 listing:
-  - id: reviews
-    contents:
-      - "paper-reviews/*.qmd"
-      - "!paper-reviews/index.qmd"
-    sort: "date desc"
-    type: default
-    fields: [date, title, description]
-    date-format: "YYYY-MM-DD"
-  - id: experiments
-    contents: "experiments/2*.qmd"
-    sort: "date desc"
-    type: default
-    fields: [date, title, description]
-    date-format: "YYYY-MM-DD"
+  id: posts
+  contents:
+    - "paper-reviews/*.qmd"
+    - "experiments/2*.qmd"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+  date-format: "YYYY-MM-DD"
 toc: false
+aliases:
+  - /paper-reviews/index.html
+  - /experiments/index.html
+  - /open-questions.html
 ---
 
 인간과 AI가 섞여 상호작용하는 사회 — **합성사회**를 공부하고 기록한다. 쫓는 질문 하나: 정답이 없는 열린 세계에서, AI로 만든 개인이 "그 사람답게" 행동하는지를 어떻게 재나.
 
 처음이면 [분야 지도](field-map.qmd) — 위 질문이 분야 어디에 비어 있는지부터.
 
-## 논문
-
-::: {#reviews}
+::: {#posts}
 :::
-
-## 실험
-
-::: {#experiments}
-:::
-
----
-
-참고 — [ML 기초](foundations/index.qmd) · [용어집](glossary.qmd)
