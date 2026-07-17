@@ -1,7 +1,7 @@
 ---
 title: "2411.10109 — LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals"
 date: "2026-06-30"
-description: "실제 1,052명을 2시간 인터뷰로 떠 만든 개인 에이전트. 측정의 눈 — test-retest 천장·정규화 정확도. 본문 2패스 + S8 메커니즘 + S9 강건성."
+description: "실제 1,052명을 2시간 인터뷰로 떠 만든 개인 에이전트. 본인도 2주 뒤엔 답이 달라진다는 사실을 채점 천장으로 삼은 측정틀."
 categories: [review]
 ---
 

@@ -31,11 +31,17 @@ website:
       - icon: github
         href: https://github.com/qoal1201/synthetic-society-research
 
+lang: ko
+
+language:
+  toc-title-website: "이 페이지에서"
+  search-text-placeholder: "검색"
+
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
+      light: [flatly, theme-light.scss]
+      dark: [darkly, theme-dark.scss]
     mermaid:
       theme: neutral
     toc: true

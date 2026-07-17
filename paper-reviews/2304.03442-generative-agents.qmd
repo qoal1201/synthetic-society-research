@@ -1,7 +1,7 @@
 ---
 title: "2304.03442 — Generative Agents: Interactive Simulacra of Human Behavior"
 date: "2026-06-29"
-description: "기억 없는 LLM 바깥에 두른 memory stream·검색·reflection·planning 구조. 전문 정독 기반 비판적 리뷰."
+description: "기억 없는 LLM 바깥에 두른 memory stream·검색·reflection·planning 구조. 창발 수치엔 비교할 기준선이 없다는 문제까지."
 categories: [review]
 aliases:
   - /clonie-comparison.html

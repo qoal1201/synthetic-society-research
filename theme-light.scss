@@ -1,0 +1,14 @@
+/*-- scss:defaults --*/
+// navbar: flatly 기본 남색 대신 흰 배경 + 얇은 경계선 (2026-07-17, 미니멀 방향)
+$navbar-bg: #ffffff;
+$navbar-fg: #212529;
+// 본문 기본 글자 크기 15px → 17px (한국어 본문 가독)
+$font-size-root: 17px;
+
+/*-- scss:rules --*/
+.navbar {
+  border-bottom: 1px solid #e9ecef;
+}
+.navbar .navbar-title {
+  font-weight: 700;
+}
