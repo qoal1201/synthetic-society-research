@@ -1,11 +1,11 @@
 ---
-title: "2602.15785 — This human study did not involve human subjects: Validating LLM simulations as behavioral evidence"
+title: "LLM 시뮬레이션은 언제 증거가 되나 — Hullman 2026"
 date: "2026-07-01"
 description: "LLM 시뮬레이션을 행동과학 증거로 쓸 때 언제 믿을 수 있는지 정리한 방법론 논문. Park 2024가 이 논문 안에서 어느 검증 범주에 속하는지 확인했다."
 categories: [review]
 ---
 
-> arXiv: [2602.15785](https://arxiv.org/abs/2602.15785) · Hullman, Broska, Sun, Shaw / 2026년 2월 제출
+> *"This human study did not involve human subjects": Validating LLM simulations as behavioral evidence* · arXiv: [2602.15785](https://arxiv.org/abs/2602.15785) · Hullman, Broska, Sun, Shaw / 2026년 2월 제출
 > 상태: 서론·2장(배경 개념)·3장(휴리스틱 검증)·4장(유효한 추론의 조건, 일부)까지 정독. 5장(통계적 보정)은 도입부만, 이후 상세·결론은 미정독.
 > 이 논문은 [Generative Agents](2304.03442-generative-agents.qmd)나 [Park 2024](2411.10109-self-report-agents.qmd)처럼 새 아키텍처나 새 실험 결과를 내는 논문이 아니다. "LLM 시뮬레이션을 사회과학 연구의 증거로 언제 믿어도 되는가"를 정리하는 방법론 논문이다.
 

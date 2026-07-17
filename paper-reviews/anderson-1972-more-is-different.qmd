@@ -1,5 +1,5 @@
 ---
-title: "Anderson 1972 — More Is Different"
+title: "많아지면 달라진다 — Anderson 1972"
 date: "2026-07-16"
 description: "기초 법칙을 다 알아도 위층을 지어 올릴 수 없다는 논증. 창발의 물리 쪽 원전."
 categories: [review]

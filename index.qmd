@@ -1,5 +1,5 @@
 ---
-pagetitle: "Synthetic Society Research"
+pagetitle: "합성사회 연구 노트"
 listing:
   - id: reviews
     contents:

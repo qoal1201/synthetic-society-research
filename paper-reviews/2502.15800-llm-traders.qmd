@@ -1,11 +1,11 @@
 ---
-title: "2502.15800 — LLM Agents Do Not Replicate Human Market Traders"
+title: "LLM 트레이더는 인간의 버블을 재현하지 못한다 — Henning 2025"
 date: "2026-07-17"
 description: "정답을 알려줘도 인간은 버블을 만든다. LLM 6종은 못 만들었다. 실험금융으로 재현 실패를 보고한 논문."
 categories: [review]
 ---
 
-> arXiv: [2502.15800](https://arxiv.org/abs/2502.15800) · Thomas Henning · Siddhartha M. Ojha · Ross Spoon · Jiatong Han · Colin F. Camerer (Caltech·Virginia Tech·Zhejiang) — 프리프린트(v3, 2025-10-11). PDF에 게재처 표기 없음.
+> *LLM Agents Do Not Replicate Human Market Traders* · arXiv: [2502.15800](https://arxiv.org/abs/2502.15800) · Thomas Henning · Siddhartha M. Ojha · Ross Spoon · Jiatong Han · Colin F. Camerer (Caltech·Virginia Tech·Zhejiang) — 프리프린트(v3, 2025-10-11). PDF에 게재처 표기 없음.
 > 상태: 버블 재현 실패의 뼈대까지 정독(설계·Table 1·전략 텍스트 분석). 예측 합리성 검정(§8)과 부록 상세는 미정독.
 > 모델: Claude-3.5-Sonnet · GPT-3.5(gpt-3.5-turbo-0125) · GPT-4o(gpt-4o-2024-08-06) · Grok-2 · Mistral-Large 24.11 · Gemini-1.5 Pro
 

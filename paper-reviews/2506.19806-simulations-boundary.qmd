@@ -1,11 +1,11 @@
 ---
-title: "2506.19806 — LLM-Based Social Simulations Require a Boundary"
+title: "LLM 사회 시뮬레이션에는 경계가 필요하다 — Wu 2025"
 date: "2026-07-17"
 description: "LLM 에이전트는 사람들의 다양성을 못 낸다는 포지션 논문. 고치는 법이 아니라 주장을 줄이는 규율을 제안한다."
 categories: [review]
 ---
 
-> arXiv: [2506.19806](https://arxiv.org/abs/2506.19806) · Zengqing Wu · Run Peng · Takayuki Ito · Makoto Onizuka · Chuan Xiao — 프리프린트(v2, 2026-02-05 제출). PDF에 게재처 표기 없음.
+> *LLM-Based Social Simulations Require a Boundary* · arXiv: [2506.19806](https://arxiv.org/abs/2506.19806) · Zengqing Wu · Run Peng · Takayuki Ito · Makoto Onizuka · Chuan Xiao — 프리프린트(v2, 2026-02-05 제출). PDF에 게재처 표기 없음.
 > 상태: 균질화 축만 정독. §3~§4(평균 페르소나·평균과 분산·주장 3수준)와 부록 D(판별 기준)까지 원문 대조. §5의 21편 코딩 상세와 부록 B(시간적 일관성·강건성)는 미정독.
 > 자체 실험 없음. Figure 2의 예시는 저자들의 선행 연구(Wu 2024)에서 변형해 가져왔다.
 

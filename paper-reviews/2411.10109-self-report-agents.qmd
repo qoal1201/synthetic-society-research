@@ -1,11 +1,11 @@
 ---
-title: "2411.10109 — LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals"
+title: "실제 사람 1,052명으로 만든 개인 에이전트 — Park 2024"
 date: "2026-06-30"
 description: "실제 1,052명을 2시간 인터뷰로 떠 만든 개인 에이전트. 본인도 2주 뒤엔 답이 달라진다는 사실을 채점 천장으로 삼은 측정틀."
 categories: [review]
 ---
 
-> arXiv: [2411.10109](https://arxiv.org/abs/2411.10109) · Park, Zou, Kamphorst, Egan, Shaw, Hill, Cai, Morris, Liang, Willer, Bernstein / 2024
+> *LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals* · arXiv: [2411.10109](https://arxiv.org/abs/2411.10109) · Park, Zou, Kamphorst, Egan, Shaw, Hill, Cai, Morris, Liang, Willer, Bernstein / 2024
 > (개정판에서 제목 변경, 원제 "Generative Agent Simulations of 1,000 People")
 > 상태: 본문 정독 완료(측정틀·방법·결과·메커니즘 S8·강건성 S9·한계) · 클로니 설계 대조는 본문 "클로니 연결" 콜아웃 · 관련: [용어집](../glossary.qmd) · [계보](../reading-list.qmd)
 > 모델: GPT-4o, 전부 단일 모델 + 자기보고를 프롬프트에 주입(파인튜닝 없음). 스몰빌([2304.03442](2304.03442-generative-agents.qmd))이 *닫힌 시뮬*(정답 없음 → believability)이라면, 이 논문은 *진짜 사람*을 데려와 비로소 "정확하냐"를 묻는다.

@@ -11,7 +11,7 @@ project:
     - foundations/
 
 website:
-  title: "Synthetic Society Research"
+  title: "합성사회 연구 노트"
   description: "인간과 AI가 상호작용하는 합성사회를 공부하고 기록하는 공간."
   site-url: https://qoal1201.github.io/synthetic-society-research/
   image: images/field-map-terrain.png
