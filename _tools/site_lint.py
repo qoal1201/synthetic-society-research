@@ -145,6 +145,34 @@ def table_rows(text, score_header):
     return rows
 
 
+# 문체 반복 상한(2026-07-18 전수 탐지에서 확정한 쿼터 — 초과는 경고, 판정은 사람이)
+STYLE_QUOTA = {"대시": 12, "볼드쌍": 10, "아니라": 5, "연결어미쉼표": 6}
+CONJ_COMMA_RE = re.compile(r"(?:고|며|지만|는데|면서|므로),\s")
+
+
+def check_style(path, lines, fenced):
+    """산문 줄만 세어 문체 반복(대시·볼드·대조구문·연결어미 쉼표)이 쿼터를 넘으면 경고.
+
+    인용 블록(>)·표(|)·헤딩(#)·코드 펜스는 제외 — 원문 인용과 데이터는 문체 대상이 아니다.
+    불릿 라벨 구분자 등 정당한 대시가 섞여 세밀하진 않으므로 상한을 넉넉히 잡았다.
+    """
+    counts = {"대시": 0, "볼드쌍": 0, "아니라": 0, "연결어미쉼표": 0}
+    for line, in_fence in zip(lines, fenced):
+        s = line.strip()
+        if in_fence or s.startswith((">", "|", "#")) or not s:
+            continue
+        # 대시는 산문만 센다 — 불릿의 라벨 구분자(`- **라벨** — 설명`)와 서지 줄은 관례상 예외
+        if not s.startswith(("-", "*", "+")):
+            counts["대시"] += line.count("—")
+        counts["볼드쌍"] += line.count("**") // 2
+        counts["아니라"] += line.count("가 아니라") + line.count("이 아니라")
+        counts["연결어미쉼표"] += len(CONJ_COMMA_RE.findall(line))
+    over = {k: v for k, v in counts.items() if v > STYLE_QUOTA[k]}
+    if over:
+        detail = "·".join(f"{k} {v}(상한 {STYLE_QUOTA[k]})" for k, v in over.items())
+        warnings.append(f"{path}: 문체 쿼터 초과 — {detail}")
+
+
 def check_kaggle_sync():
     """foundations 대회 표 ↔ kaggle README 점수 동기 (진실원 = kaggle README).
 
@@ -157,11 +185,12 @@ def check_kaggle_sync():
         return
     f_rows = table_rows(foundations.read_text(encoding="utf-8"), "최고 점수")
     k_rows = table_rows(kaggle_readme.read_text(encoding="utf-8"), "최고 점수")
-    for name, k_score in k_rows.items():
-        if name not in f_rows:
-            warnings.append(f"foundations/index.qmd 표에 kaggle README의 '{name}' 행이 없음")
-        elif f_rows[name] != k_score:
-            errors.append(f"foundations/index.qmd '{name}' 점수 '{f_rows[name]}' ≠ kaggle README '{k_score}' (진실원=kaggle README)")
+    # 표에 있는 대회만 점수를 대조한다. 행의 존재 자체는 요구하지 않는다 —
+    # 2026-07-18 선호 결정으로 미발행 대회 행(재정비 중 류)을 표에서 내렸다.
+    # 발행된 행의 점수 어긋남(07-07 S6E7 사례)은 여전히 오류로 잡힌다.
+    for name, f_score in f_rows.items():
+        if name in k_rows and k_rows[name] != f_score:
+            errors.append(f"foundations/index.qmd '{name}' 점수 '{f_score}' ≠ kaggle README '{k_rows[name]}' (진실원=kaggle README)")
 
 
 # 글자수 문턱은 2026-07-18에 폐지했다. 같은 날 실측으로 해가 확인됐다 —
@@ -233,6 +262,7 @@ def main():
         check_links(path, text)
         check_jargon(path.relative_to(ROOT), lines, fenced)
         check_status_line(path, lines)
+        check_style(path.relative_to(ROOT), lines, fenced)
 
     check_kaggle_sync()
     check_glossary()

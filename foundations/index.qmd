@@ -8,11 +8,8 @@ aliases:
 
 ## 대회 기록
 
-| 대회 | 종류 | 최고 점수 | 상태 | 노트북 |
-|---|---|---|---|---|
-| Student Health Risk (Playground S6E7) | 분류(다중·불균형) | 0.94967 | 진행 중 | [학생 건강 리스크 예측](student-health-risk.ipynb) |
-| Titanic | 분류(이진) | 0.77990 | 완료 | 재정비 중 |
-| House Prices | 회귀 | 0.14444 | 완료 | 정리 예정 |
-| Digit Recognizer | 분류(다중·이미지) | — | 일시중단 | — |
+| 대회 | 종류 | 최고 점수 | 노트북 |
+|---|---|---|---|
+| Student Health Risk (Playground S6E7) | 분류(다중·불균형) | 0.94967 | [학생 건강 리스크 예측](student-health-risk.ipynb) |
 
 대회 데이터(csv)는 캐글 규정상 재배포할 수 없어 이 저장소에 포함하지 않는다. 노트북은 저장된 실행 결과 그대로다.
