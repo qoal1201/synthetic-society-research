@@ -1,0 +1,55 @@
+이 저장소는 글과 코드에 서로 다른 라이선스를 적용한다.
+
+================================================================
+글 — CC BY 4.0
+================================================================
+
+논문 리뷰, 실험 기록, 용어집, 분야 지도, 읽을거리 색인 등 이 저장소의
+서술 저작물(.qmd 파일의 산문, 노트북의 설명 셀, README)은
+Creative Commons Attribution 4.0 International (CC BY 4.0)을 따른다.
+
+  전문(법적 효력): https://creativecommons.org/licenses/by/4.0/legalcode
+  한국어 요약:     https://creativecommons.org/licenses/by/4.0/deed.ko
+
+출처를 밝히면 복제·배포·수정·상업적 이용이 자유롭다.
+
+  출처 표기 예:
+  박선호, 「합성사회 연구 노트」
+  https://qoal1201.github.io/synthetic-society-research/
+
+================================================================
+코드 — MIT
+================================================================
+
+_tools/ 의 스크립트, foundations/ 노트북의 코드 셀, 그 밖의 소스 코드는
+아래 MIT 라이선스를 따른다.
+
+MIT License
+
+Copyright (c) 2026 박선호 (Sunho Park)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================
+이 저장소에 없는 것
+================================================================
+
+논문 PDF 원본은 각 저작권자의 것이며 이 저장소에 포함하지 않는다.
+캐글 대회 데이터(csv)는 재배포 규정상 포함하지 않는다.
+위 두 라이선스는 이 저장소에 실제로 담긴 글과 코드에만 적용된다.
