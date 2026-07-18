@@ -42,7 +42,7 @@ LINK_RE = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 SEP_ROW_RE = re.compile(r"^\|?[\s:\-|]+\|?$")
 ANCHOR_RE = re.compile(r"\{#([A-Za-z0-9_-]+)\}")
 
-errors, warnings = [], []
+errors, warnings, notes = [], [], []
 
 
 def strip_code_fences(lines):
@@ -164,7 +164,13 @@ def check_kaggle_sync():
             errors.append(f"foundations/index.qmd '{name}' 점수 '{f_rows[name]}' ≠ kaggle README '{k_score}' (진실원=kaggle README)")
 
 
-GLOSSARY_MAX_CHARS = 380  # 항목 본문 장황 경고 문턱 — 독자에게 보이는 글자만 셈
+# 글자수 문턱은 2026-07-18에 폐지했다. 같은 날 실측으로 해가 확인됐다 —
+# 430자를 맞추려다 cross-entropy의 출처("정보이론에서 왔다"), 정렬이 다양성을
+# 줄이는 메커니즘("cross-entropy와 방향이 반대라"), 온도 항목의 오해 교정
+# 대비("창의성이 아니라")가 지워졌고, 회귀분석 항목은 종결어미가 잘려 나갔다.
+# 규칙이 지키려던 것(용어집은 사전이지 리뷰가 아니다)은 아래 '문단 2개' 규칙이
+# 직접 강제한다. 길이는 판정하지 않고 아래 report_glossary_lengths가 보여주기만 한다.
+GLOSSARY_REPORT_TOP = 5  # 참고 출력할 최장 항목 수
 MD_LINK_RE = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 
 
@@ -183,7 +189,7 @@ def check_glossary():
 
     - #### 헤딩엔 {#앵커} 필수, 파일 내 앵커 중복 금지(07-10 창발 중복 실측 클래스)
     - 항목 본문 = 문단 2개(한 줄 정의 + 설명 문단 1개) — 초과는 경고
-    - 본문 길이 초과(장황)는 경고 — 넘치는 얘기는 리뷰 본문 몫
+    - 길이는 판정하지 않고 최장 항목만 참고 출력 (2026-07-18 문턱 폐지)
     """
     glossary = ROOT / "glossary.qmd"
     if not glossary.exists():
@@ -206,13 +212,16 @@ def check_glossary():
             current = None
         elif current is not None:
             current[1].append(line)
+    lengths = []
     for i, body in entries:
         paras = [p for p in "\n".join(body).split("\n\n") if p.strip()]
         if len(paras) > 2:
             warnings.append(f"glossary.qmd:{i} 항목 문단 {len(paras)}개 — 골격은 '한 줄 정의 + 설명 문단 1개'")
-        total = sum(visible_len(p) for p in paras)
-        if total > GLOSSARY_MAX_CHARS:
-            warnings.append(f"glossary.qmd:{i} 항목 본문 {total}자 — 장황 후보({GLOSSARY_MAX_CHARS}자 초과), 리뷰 본문으로 뺄 것 검토")
+        lengths.append((sum(visible_len(p) for p in paras), i))
+
+    # 판정이 아니라 참고 — 비대해지면 눈에 띄되 문장을 깎으라는 압박은 주지 않는다.
+    for n, i in sorted(lengths, reverse=True)[:GLOSSARY_REPORT_TOP]:
+        notes.append(f"glossary.qmd:{i} {n}자")
 
 
 def main():
@@ -232,6 +241,10 @@ def main():
         print(f"[오류] {e}")
     for w in warnings:
         print(f"[경고] {w}")
+    if notes:
+        print("\n참고 — 용어집 최장 항목(판정 아님):")
+        for n in notes:
+            print(f"  {n}")
     print(f"\n검사 파일 {len(PUBLIC_FILES)}개 · 오류 {len(errors)} · 경고 {len(warnings)}")
     sys.exit(1 if errors else 0)
 
