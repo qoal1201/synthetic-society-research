@@ -1,4 +1,4 @@
-# Synthetic Society Research
+# 합성사회 연구 노트
 
 인간과 AI가 상호작용하는 합성사회(synthetic society)를 공부하고 기록하는 저장소.
 
@@ -8,26 +8,25 @@
 
 | 폴더 / 파일 | 내용 |
 |---|---|
-| `research-log/` | 공부 일지 — 작업 호 단위(안에 날짜별 체크포인트) |
-| `paper-reviews/` | 논문 리뷰 — 핵심 주장·방법·한계·문제점 |
-| `clonie-comparison.qmd` | 클로니 ↔ 계보 설계 대조 |
-| `glossary.qmd` | 개념 정리 (출처별 색인) |
-| `open-questions.qmd` | 열린 질문 |
-| `reading-list.qmd` | 계보·읽을거리 |
-| `reproductions/` | 논문 결과 재현 — 코드 + 원논문 대조 (준비 중) |
+| `paper-reviews/` | 논문 리뷰 — 해부·판정·한계, 요약이 아님 |
+| `experiments/` | 실험 기록 — 실험 하나가 글 하나, 안에 날짜별 체크포인트 |
+| `foundations/` | ML 기초 실습 — 캐글 대회 하나가 노트북 하나 |
+| `field-map.qmd` | 분야 지도 — 무엇이 연구됐고 어디가 비었나 |
+| `glossary.qmd` | 개념 사전 (기초 개념 + 논문별 용어) |
+| `reading-list.qmd` | 계보·읽을거리 색인 |
+| `index.qmd` | 홈 — 논문·실험 시간순 목록 |
 
-글은 Quarto로 작성하고 GitHub Pages로 배포한다. 재현 코드는 각 `reproductions/<주제>/` 폴더에 실행법과 함께 둔다.
+글은 [Quarto](https://quarto.org)로 작성한다. `main`에 푸시하면 GitHub Actions가 렌더해 GitHub Pages로 배포한다(`.github/workflows/publish.yml`).
 
-## 재현 실행
-
-각 재현물은 독립 실행 가능한 작은 프로젝트다 — 데이터 사이언스 표준(cookiecutter-data-science)의 축소판:
+## 로컬 렌더
 
 ```
-reproductions/<주제>/
-  README.qmd        설명 + 원논문 대조
-  requirements.txt  파이썬 환경
-  src/              재현 코드
-  data/             데이터 (raw는 커밋 제외)
+quarto render
 ```
 
-실행: `pip install -r requirements.txt` 후 각 README의 실행법 참조. (첫 재현: Generative Agents, 준비 중)
+결과는 `_site/`에 생성된다. 사이트 정합성 검사는 `python3 _tools/site_lint.py`.
+
+## 메모
+
+- `foundations/`의 노트북은 저장된 실행 결과 그대로 렌더한다. 캐글 대회 데이터(csv)는 재배포 규정상 저장소에 포함하지 않아 재실행되지 않는다.
+- 논문 PDF 원본과 정독 노트(`_papers/`)는 저장소에 포함하지 않는다.
