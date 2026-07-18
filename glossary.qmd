@@ -106,6 +106,18 @@ cv=5는 5조각으로 나눠 5번 채점한 뒤 평균 낸다는 뜻. 한 번만
 
 사전학습의 목적(다음 단어 맞히기)이 "도움이 되라"는 인간의 요구와 어긋나 있어 뒤에 붙인다([SLP 3판](https://web.stanford.edu/~jurafsky/slp3/) §9.1). 갈래가 둘이다 — 지시-응답 쌍으로 추가 학습시키는 instruction tuning(SFT), 그리고 어느 응답이 나은지에 대한 사람의 선호를 학습해 그쪽으로 미는 preference alignment(RLHF·DPO). [기본 페르소나](#base-persona)가 여기서 생긴다. [cross-entropy](#cross-entropy)와 방향이 반대라 출력 다양성을 줄이는 원인으로 자주 지목되지만, 두 원인을 실제로 갈라낸 사례는 아직 못 봤다([Wang 외 리뷰](paper-reviews/2402.01908-wang-identity-groups.qmd)).
 
+#### greedy 디코딩 (greedy decoding) {#greedy-decoding}
+
+매 순간 확률이 가장 높은 토큰 하나만 골라 이어가는 생성 방식.
+
+언어모델은 다음 토큰마다 확률 분포를 내는데, 그중 [argmax](#argmax)(제일 높은 칸)만 매번 집는 것이 greedy다. "greedy(탐욕)"는 지금 이 순간의 최선만 취하고 뒤를 내다보지 않는 알고리즘을 가리킨다. 계산이 단순하고 같은 입력이면 결과도 늘 같지만, 확률이 낮은 선택지는 영영 나오지 않아 출력이 획일화된다. 데이터가 60/40이어도 매번 60쪽만 집어 40쪽이 죽는 셈이라 [균질화](#homogenization)가 생성 시점에 새어드는 통로 하나다. 반대쪽 끝이 [random sampling](#random-sampling)이고, 그 사이를 [온도](#temperature)로 조절한다.
+
+#### random sampling (무작위 샘플링) {#random-sampling}
+
+다음 토큰을 모델이 낸 확률에 비례해 무작위로 뽑는 생성 방식.
+
+[greedy](#greedy-decoding)가 늘 1등만 집는다면, random sampling은 확률이 60/40일 때 60%로 A, 40%로 B를 주사위 굴리듯 뽑는다(multinomial sampling). 매 순간 과거나 미래를 기억하지 않고 그 자리 확률대로만 뽑지만, 여러 번 뽑으면 큰 수의 법칙으로 전체 비율이 확률을 따라온다 — 비율을 맞추려 계획한 게 아니라 결과로 따라오는 것이다. 그래서 greedy가 죽인 드문 선택지가 되살아난다. 뽑는 분포를 얼마나 뾰족하게 또는 평평하게 할지는 [온도](#temperature)로 정한다.
+
 #### 온도 (temperature) {#temperature}
 
 다음 토큰을 뽑기 전에 확률 분포를 얼마나 뾰족하게 또는 평평하게 만들지 정하는 생성 시점 설정값(τ). softmax에 넣기 전에 logit을 τ로 나눈다.
