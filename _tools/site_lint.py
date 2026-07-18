@@ -164,7 +164,18 @@ def check_kaggle_sync():
             errors.append(f"foundations/index.qmd '{name}' 점수 '{f_rows[name]}' ≠ kaggle README '{k_score}' (진실원=kaggle README)")
 
 
-GLOSSARY_MAX_CHARS = 430  # 항목 본문 장황 경고 문턱 (한 줄 정의 + 설명 문단 1개 기준)
+GLOSSARY_MAX_CHARS = 380  # 항목 본문 장황 경고 문턱 — 독자에게 보이는 글자만 셈
+MD_LINK_RE = re.compile(r"\[([^\]]*)\]\([^)]*\)")
+
+
+def visible_len(text):
+    """마크다운 링크의 URL을 뺀 길이 — 독자가 실제로 읽는 분량.
+
+    2026-07-18 교체 이유: 원문 글자수를 세면 URL이 22~132자를 차지해
+    인용을 성실히 단 항목일수록 장황 판정을 받았다(cross-entropy는 측정값의 27%가 URL).
+    규칙 의도가 '읽기에 장황한가'이므로 표시 텍스트만 센다.
+    """
+    return len(MD_LINK_RE.sub(r"\1", text))
 
 
 def check_glossary():
@@ -199,7 +210,7 @@ def check_glossary():
         paras = [p for p in "\n".join(body).split("\n\n") if p.strip()]
         if len(paras) > 2:
             warnings.append(f"glossary.qmd:{i} 항목 문단 {len(paras)}개 — 골격은 '한 줄 정의 + 설명 문단 1개'")
-        total = sum(len(p) for p in paras)
+        total = sum(visible_len(p) for p in paras)
         if total > GLOSSARY_MAX_CHARS:
             warnings.append(f"glossary.qmd:{i} 항목 본문 {total}자 — 장황 후보({GLOSSARY_MAX_CHARS}자 초과), 리뷰 본문으로 뺄 것 검토")
 
