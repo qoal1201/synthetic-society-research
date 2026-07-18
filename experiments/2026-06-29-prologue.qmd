@@ -1,6 +1,7 @@
 ---
 title: "프롤로그 — 합성사회 공부 시작"
 date: "2026-06-29"
+date-modified: "2026-07-17"
 description: "핵심 논문 3개와 관련 분야 현황 파악"
 categories: [실험]
 aliases:

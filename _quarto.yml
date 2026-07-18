@@ -32,6 +32,7 @@ lang: ko
 language:
   toc-title-website: "이 페이지에서"
   search-text-placeholder: "검색"
+  title-block-modified: "최종 갱신"
 
 format:
   html:
