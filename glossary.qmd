@@ -104,7 +104,7 @@ cv=5는 5조각으로 나눠 5번 채점한 뒤 평균 낸다는 뜻. 한 번만
 
 사전학습을 마친 언어모델이 사람에게 도움이 되고 해롭지 않게 행동하도록 맞추는 후속 훈련.
 
-사전학습 목적(다음 단어 맞히기)이 "도움이 되라"는 요구와 어긋나 붙인다([SLP 3판](https://web.stanford.edu/~jurafsky/slp3/) §9.1). 갈래는 둘 — 지시-응답 쌍으로 추가 학습하는 instruction tuning(SFT)과, 선호를 학습해 그쪽으로 미는 preference alignment(RLHF·DPO). [기본 페르소나](#base-persona)가 여기서 생긴다. [cross-entropy](#cross-entropy)와 방향이 반대라 출력 다양성을 줄이는 원인으로 자주 지목되지만, 두 원인을 실제로 갈라낸 사례는 아직 못 봤다([Wang 외 리뷰](paper-reviews/2402.01908-wang-identity-groups.qmd)).
+사전학습 목적(다음 단어 맞히기)이 "도움이 되라"는 요구와 어긋나 붙인다([SLP 3판](https://web.stanford.edu/~jurafsky/slp3/) 9장 도입). 갈래는 둘 — 지시-응답 쌍으로 추가 학습하는 instruction tuning(SFT)과, 선호를 학습해 그쪽으로 미는 preference alignment(RLHF·DPO). [기본 페르소나](#base-persona)가 여기서 생긴다. [cross-entropy](#cross-entropy)와 방향이 반대라 출력 다양성을 줄이는 원인으로 자주 지목되지만, 두 원인을 실제로 갈라낸 사례는 아직 못 봤다([Wang 외 리뷰](paper-reviews/2402.01908-wang-identity-groups.qmd)).
 
 #### greedy 디코딩 (greedy decoding) {#greedy-decoding}
 
