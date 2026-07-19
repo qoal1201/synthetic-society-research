@@ -3,7 +3,6 @@ title: "많아지면 달라진다 — Anderson 1972"
 date: "2026-07-16"
 date-modified: "2026-07-19"
 description: "기초 법칙을 다 알아도 위층을 지어 올릴 수 없다는 논증. 창발의 물리 쪽 원전."
-categories: [논문]
 ---
 
 > P. W. Anderson, "More Is Different: Broken symmetry and the nature of the hierarchical structure of science", *Science* 1972-08-04, Vol. 177, No. 4047, pp. 393–396 (DOI [10.1126/science.177.4047.393](https://doi.org/10.1126/science.177.4047.393)) · 인용 3,746회(Semantic Scholar, 2026-07-17 조회)\

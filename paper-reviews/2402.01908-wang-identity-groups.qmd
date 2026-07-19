@@ -3,7 +3,6 @@ title: "정체성 프롬프트는 그 집단을 재현하지 못한다 — Wang 
 date: "2026-07-17"
 date-modified: "2026-07-19"
 description: "정체성을 프롬프트로 주면 LLM은 당사자가 아니라 남이 흉내낸 그 집단 쪽에 착지한다. 사람 3,200명을 기준선으로 세워 왜곡과 평탄화를 실측한 논문."
-categories: [논문]
 ---
 
 > *Large language models that replace human participants can harmfully misportray and flatten identity groups* · arXiv: [2402.01908](https://arxiv.org/abs/2402.01908) · Angelina Wang (Stanford) · Jamie Morgenstern (Univ. of Washington) · John P. Dickerson (Univ. of Maryland·Arthur) · **Nature Machine Intelligence 2025** ([10.1038/s42256-025-00986-z](https://doi.org/10.1038/s42256-025-00986-z)) — 읽은 판은 arXiv v3 프리프린트(2025-02-03). 게재판은 유료라 미열람이고 게재처 표기는 PDF 안에 없다.\

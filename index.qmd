@@ -7,7 +7,7 @@ listing:
     - "experiments/2*.qmd"
   sort: "date desc"
   type: default
-  fields: [date, title, description, categories]
+  fields: [date, title, description]
   date-format: "YYYY-MM-DD"
 toc: false
 aliases:
