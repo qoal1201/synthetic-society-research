@@ -7,7 +7,7 @@ categories: [논문]
 ---
 
 > *Large language models that replace human participants can harmfully misportray and flatten identity groups* · arXiv: [2402.01908](https://arxiv.org/abs/2402.01908) · Angelina Wang (Stanford) · Jamie Morgenstern (Univ. of Washington) · John P. Dickerson (Univ. of Maryland·Arthur) · **Nature Machine Intelligence 2025** ([10.1038/s42256-025-00986-z](https://doi.org/10.1038/s42256-025-00986-z)) — 읽은 판은 arXiv v3 프리프린트(2025-02-03). 게재판은 유료라 미열람이고 게재처 표기는 PDF 안에 없다.
-> 상태: 본문 전편 정독(왜곡·평탄화·커버리지 대안·원인 귀속). 부록(Supplementary)은 미열람.
+> 상태: 본문 전편 정독(왜곡·평탄화·커버리지 대안·원인 귀속).
 > 모델: Llama-2-Chat 7B · Wizard Vicuna Uncensored 7B · GPT-3.5-Turbo · GPT-4 (GPT는 2023-06-13 가중치, 실험은 2023년 7~8월)
 
 ## 왜 이 논문인가
