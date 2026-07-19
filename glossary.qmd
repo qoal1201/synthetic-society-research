@@ -100,6 +100,12 @@ cv=5는 5조각으로 나눠 5번 채점한 뒤 평균 낸다는 뜻. 한 번만
 
 비 올 확률을 60%라고 한 예보에서 실제로 비가 왔다면 그 사건의 우도는 0.6이고 10%라고 했었다면 0.1이다. 값이 낮을수록 그 모델이 현실에 놀란 셈이라, 우도를 최대로 만드는 방향이 곧 데이터를 잘 설명하는 모델을 찾는 방향이 된다. 이것을 부호만 뒤집어 손실로 쓰는 것이 우도 손실(likelihood loss)이고 [cross-entropy](#cross-entropy)가 그 한 형태다. [Wang 외 리뷰](paper-reviews/2402.01908-wang-identity-groups.qmd)가 반박하는 원인 귀속의 원문 표현이 "cross-entropy 같은 우도 손실"이다.
 
+#### 엔트로피 (entropy) {#entropy}
+
+확률분포가 얼마나 퍼져 있는지 나타내는 정보이론의 측정값 — 결과 하나를 알아내는 데 평균적으로 필요한 정보(질문)의 양.
+
+스무고개와 구조가 같다. 후보들이 전부 비슷하게 그럴듯하면 반씩 잘라 여러 번 물어야 하고(엔트로피가 크다) 한둘에 몰려 있으면 거의 한 번에 끝난다(작다). 그래서 100개 응답이 5개 보기에 골고루 퍼진 집단은 이 값이 크고 3개에 몰린 집단은 작다 — [Wang 외 리뷰](paper-reviews/2402.01908-wang-identity-groups.qmd)의 평탄화가 후자다. 정의와 성질은 [SLP 3판](https://web.stanford.edu/~jurafsky/slp3/) §3.7. [cross-entropy](#cross-entropy)는 이 값을 모델의 짐작으로 추정한 것이다.
+
 #### cross-entropy (교차 엔트로피) {#cross-entropy}
 
 정답 분포와 모델의 확률 분포가 얼마나 어긋나는지 측정하는 값. 칸 고르기(분류)의 표준 [손실 함수](#loss-function)이고 언어모델 사전학습도 이것을 쓴다(= language modeling loss).
