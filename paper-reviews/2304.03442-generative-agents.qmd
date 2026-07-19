@@ -8,8 +8,8 @@ aliases:
   - /clonie-comparison.html
 ---
 
-> *Generative Agents: Interactive Simulacra of Human Behavior* · arXiv: [2304.03442](https://arxiv.org/abs/2304.03442) · Park, O'Brien, Cai, Morris, Liang, Bernstein · **UIST 2023** (DOI [10.1145/3586183.3606763](https://doi.org/10.1145/3586183.3606763))
-> 상태: 전문 정독(3회독) 기반 리뷰 완성.
+> *Generative Agents: Interactive Simulacra of Human Behavior* · arXiv: [2304.03442](https://arxiv.org/abs/2304.03442) · Park, O'Brien, Cai, Morris, Liang, Bernstein · **UIST 2023** (DOI [10.1145/3586183.3606763](https://doi.org/10.1145/3586183.3606763))\
+> 상태: 전문 정독(3회독) 기반 리뷰 완성.\
 > 모델: gpt-3.5-turbo — 논문 표현으로 "당시 GPT-4 API는 초대 전용(invitation-only)"(§4).
 
 ## 왜 이 논문인가
