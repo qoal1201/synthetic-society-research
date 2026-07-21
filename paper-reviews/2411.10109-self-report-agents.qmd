@@ -5,7 +5,7 @@ date-modified: "2026-07-20"
 description: "실제 1,052명을 2시간 인터뷰로 떠 만든 개인 에이전트. 본인도 2주 뒤엔 답이 달라진다는 사실을 채점 천장으로 삼은 측정틀."
 ---
 
-> *LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals* · arXiv: [2411.10109](https://arxiv.org/abs/2411.10109) · Park, Zou, Kamphorst, Egan, Shaw, Hill, Cai, Morris, Liang, Willer, Bernstein / 2024\
+> *LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals* · arXiv: [2411.10109](https://arxiv.org/abs/2411.10109) · Park, Zou, Kamphorst, Egan, Shaw, Hill, Cai, Morris, Liang, Willer, Bernstein — 프리프린트(2024 첫 공개, v3 2026-06-28 기준 게재 기록 없음 — 2026-07-22 확인)\
 > (개정판에서 제목 변경, 원제 "Generative Agent Simulations of 1,000 People")\
 > 상태: 본문과 부록 S8(메커니즘)·S9(강건성) 정독. 부록 SM2·SM3(AI 인터뷰어·에이전트 구현 상세)은 미정독.\
 > 모델: GPT-4o, 전부 단일 모델 + 자기보고를 프롬프트에 주입(파인튜닝 없음). 스몰빌([2304.03442](2304.03442-generative-agents.qmd))이 닫힌 시뮬(정답 없음 → believability)이라면, 이 논문은 진짜 사람을 데려와 비로소 "정확하냐"를 묻는다.
