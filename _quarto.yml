@@ -5,7 +5,6 @@ project:
     - index.qmd
     - field-map.qmd
     - glossary.qmd
-    - reading-list.qmd
     - experiments/
     - paper-reviews/
     - foundations/

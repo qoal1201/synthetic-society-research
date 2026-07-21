@@ -13,7 +13,6 @@
 | `foundations/` | ML 기초 실습 — 캐글 대회 하나가 노트북 하나 |
 | `field-map.qmd` | 분야 지도 — 무엇이 연구됐고 어디가 비었나 |
 | `glossary.qmd` | 개념 사전 (기초 개념 + 논문별 용어) |
-| `reading-list.qmd` | 계보·읽을거리 색인 |
 | `index.qmd` | 홈 — 논문·실험 시간순 목록 |
 
 글은 [Quarto](https://quarto.org)로 작성한다. `main`에 푸시하면 GitHub Actions가 렌더해 GitHub Pages로 배포한다(`.github/workflows/publish.yml`).
