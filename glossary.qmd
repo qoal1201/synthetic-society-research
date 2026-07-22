@@ -28,6 +28,18 @@ toc-title: "용어 훑기"
 
 대상을 '좌표'로 바꾸는 것. 뜻이 비슷한 것끼리 좌표가 가까이 모인다. [원핫](#one-hot) 같은 일반 [인코딩](#encoding)과 달리 의미가 좌표에 담기도록 학습된다는 게 핵심. 클로니는 사용자·AI 발화를 이렇게 768차원 좌표로 저장한다.
 
+#### 분포 가설 (distributional hypothesis) {#distributional-hypothesis}
+
+비슷한 문맥에 자주 나타나는 단어는 비슷한 뜻을 가진다는 가설. [임베딩](#embedding)을 학습하는 근거다.
+
+단어 뜻을 사람이 일일이 정의해 넣는 대신 그 단어가 어떤 단어들 곁에 나타나는지로 뜻을 추정한다. "고양이"와 "강아지"는 "키운다·먹이·귀엽다" 곁에 함께 나오지만 "자동차"는 그렇지 않다. 그래서 문맥이 겹치는 단어끼리 좌표가 가까워지도록 학습하면 뜻이 담긴 벡터가 나온다. word2vec 같은 방법이 이 원리로 대량의 문장에서 임베딩을 얻는다. 정의와 귀속은 [SLP 3판](https://web.stanford.edu/~jurafsky/slp3/) 5장.
+
+#### 문장 임베딩 (sentence embedding) {#sentence-embedding}
+
+문장 전체를 벡터 하나로 바꾼 [임베딩](#embedding). 대표 모델이 SBERT(Sentence-BERT)다.
+
+단어 하나 대신 문장이나 문단 전체의 뜻을 벡터 하나에 담는다. 흔한 방식은 문장 속 단어 벡터들을 평균 내는 것이다(mean pooling, 평균 풀링). 문장이 길어 단어가 많아질수록 개별 단어의 특징이 상쇄되고 벡터가 전체 평균 쪽으로 모인다. 그래서 길이가 크게 다른 문장들을 [코사인 유사도](#cosine-similarity)로 바로 비교하면 긴 문장끼리 실제보다 더 닮아 보일 수 있다. [Wang 외 리뷰](paper-reviews/2402.01908-wang-identity-groups.qmd)의 평탄화를 재현하는 [실험](experiments/2026-07-20-wang-flattening.qmd)에서 이 길이 취약성이 다양성 지표의 방향을 뒤집었다.
+
 #### 코사인 유사도 (cosine similarity) {#cosine-similarity}
 
 두 벡터가 얼마나 같은 방향인지를 사이 각도로 측정한 값(같은 방향 1, 직각 0, 반대 방향 -1).
