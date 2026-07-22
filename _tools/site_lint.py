@@ -31,9 +31,10 @@ JARGON_ERROR = ["load-bearing", "just-in-time", "작업호", "진실원"]
 JARGON_WARN = ["마일스톤", "체크포인트", "BACKLOG"]
 
 # 상단에 "> 상태:" 줄이 있어야 하는 가든 문서 — 오독 방지 기능이 있는 곳만
-# (2026-07-12 선호 결정: 장식성 상태 줄은 제거 — 용어집·실험 랜딩·foundations 랜딩은 제외)
+# (2026-07-12 선호 결정: 장식성 상태 줄은 제거 — 용어집·실험 랜딩·foundations 랜딩은 제외.
+#  reading-list.qmd는 2026-07-22 지도에 흡수·삭제돼 목록에서 뺌)
 STATUS_REQUIRED = (
-    ["field-map.qmd", "reading-list.qmd"]
+    ["field-map.qmd"]
     + [str(p.relative_to(ROOT)) for p in (ROOT / "paper-reviews").glob("*.qmd")
        if p.name != "index.qmd"]
 )
@@ -145,18 +146,23 @@ def table_rows(text, score_header):
     return rows
 
 
-# 문체 반복 상한(2026-07-18 전수 탐지에서 확정한 쿼터 — 초과는 경고, 판정은 사람이)
-STYLE_QUOTA = {"대시": 12, "볼드쌍": 10, "아니라": 5, "연결어미쉼표": 6}
+# 문체 반복 상한(2026-07-18 전수 탐지에서 확정한 쿼터 — 초과는 경고, 판정은 사람이).
+# 원칙(2026-07-22 확정): 형태만으로 문제인 패턴만 기계가 센다. "아니라" 쿼터는 제거 —
+# 극적 대조(voice 금지)와 사실 서술(정당)을 문자열로 못 가르고, 오탐이 정당한 문장을
+# 고치게 만들었다(anisotropy 항목 실측). 그 판정은 의미 층(자체 스캔·voice-check·통독) 몫.
+STYLE_QUOTA = {"대시": 12, "볼드쌍": 10, "연결어미쉼표": 6}
 CONJ_COMMA_RE = re.compile(r"(?:고|며|지만|는데|면서|므로),\s")
+# 불릿 라벨 볼드(`- **라벨**: 설명`, `- **라벨** — 설명`) — 역할 볼드(voice 규칙 ③)라 산문 볼드와 구분
+LABEL_BOLD_RE = re.compile(r"^[-*+]\s+\*\*[^*]+\*\*")
 
 
 def check_style(path, lines, fenced):
-    """산문 줄만 세어 문체 반복(대시·볼드·대조구문·연결어미 쉼표)이 쿼터를 넘으면 경고.
+    """산문 줄만 세어 문체 반복(대시·볼드·연결어미 쉼표)이 쿼터를 넘으면 경고.
 
     인용 블록(>)·표(|)·헤딩(#)·코드 펜스는 제외 — 원문 인용과 데이터는 문체 대상이 아니다.
     불릿 라벨 구분자 등 정당한 대시가 섞여 세밀하진 않으므로 상한을 넉넉히 잡았다.
     """
-    counts = {"대시": 0, "볼드쌍": 0, "아니라": 0, "연결어미쉼표": 0}
+    counts = {"대시": 0, "볼드쌍": 0, "연결어미쉼표": 0}
     for line, in_fence in zip(lines, fenced):
         s = line.strip()
         if in_fence or s.startswith((">", "|", "#")) or not s:
@@ -164,8 +170,9 @@ def check_style(path, lines, fenced):
         # 대시는 산문만 센다 — 불릿의 라벨 구분자(`- **라벨** — 설명`)와 서지 줄은 관례상 예외
         if not s.startswith(("-", "*", "+")):
             counts["대시"] += line.count("—")
-        counts["볼드쌍"] += line.count("**") // 2
-        counts["아니라"] += line.count("가 아니라") + line.count("이 아니라")
+        # 볼드는 줄 맨 앞 불릿 라벨 1개를 빼고 센다(2026-07-22) — 불릿-라벨 구조 문서가
+        # 역할 준수와 무관하게 걸리던 오탐 제거(self-report 27쌍 실측)
+        counts["볼드쌍"] += LABEL_BOLD_RE.sub("", s).count("**") // 2
         counts["연결어미쉼표"] += len(CONJ_COMMA_RE.findall(line))
     over = {k: v for k, v in counts.items() if v > STYLE_QUOTA[k]}
     if over:
