@@ -78,7 +78,7 @@ flowchart LR
 ```{mermaid}
 %%| fig-cap: "표준 검색은 관련성 하나로 고른다. GA는 거기에 최근성·중요도를 더해 세 점수로 고른다. 모식도."
 flowchart TB
-  subgraph STD["표준 검색 (도서관·교과서)"]
+  subgraph STD["표준 검색"]
     direction LR
     S1["질의"] --> S2["관련성"] --> S3["결과"]
   end
